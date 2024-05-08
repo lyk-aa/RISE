@@ -217,18 +217,8 @@
                         data-bs-toggle="dropdown">
                         <img src="{{ asset('admin_assets/assets/img/profile-img.jpg') }}" alt="Profile"
                             class="rounded-circle">
-<<<<<<< HEAD
-<<<<<<< HEAD
+
                         <span class="d-none d-md-block dropdown-toggle ps-2">K. Anderson</span>
-                        
-=======
-                        <span class="d-none d-md-block dropdown-toggle ps-2">K. Anderson>
-                            {{ auth()->user()->name }}
-                            <br>
-                            <small>{{ auth()->user()->level }}</small>
-                        </span>
->>>>>>> b4ba31ca69de2dd6206b02a48b9a7323001b7d34
-=======
                         @if (auth()->check())
                             <!-- Check if user is authenticated -->
                             <span class="d-none d-md-block dropdown-toggle ps-2">
@@ -237,7 +227,6 @@
                                 <small>{{ auth()->user()->level }}</small> <!-- Display user's level -->
                             </span>
                         @endif
->>>>>>> 1e53150409e0e368861ea7d786f7c739dedc7cb2
                     </a>
 
 
