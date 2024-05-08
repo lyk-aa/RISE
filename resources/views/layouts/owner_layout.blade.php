@@ -215,6 +215,7 @@
 
                     <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#"
                         data-bs-toggle="dropdown">
+<<<<<<< HEAD
 
 
 
@@ -224,6 +225,20 @@
                             <br>
                             <small>{{ auth()->user()->level }}</small> <!-- Display user's level -->
                         </span>
+=======
+                        <img src="{{ asset('admin_assets/assets/img/profile-img.jpg') }}" alt="Profile"
+                            class="rounded-circle">
+
+                        <span class="d-none d-md-block dropdown-toggle ps-2">K. Anderson</span>
+                        @if (auth()->check())
+                            <!-- Check if user is authenticated -->
+                            <span class="d-none d-md-block dropdown-toggle ps-2">
+                                {{ auth()->user()->name }} <!-- Display user's name -->
+                                <br>
+                                <small>{{ auth()->user()->level }}</small> <!-- Display user's level -->
+                            </span>
+                        @endif
+>>>>>>> 8a4ea16a3983152a862179f552321b9b810f5584
                     </a>
 
 
