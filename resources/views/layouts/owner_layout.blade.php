@@ -217,7 +217,11 @@
                         data-bs-toggle="dropdown">
                         <img src="{{ asset('admin_assets/assets/img/profile-img.jpg') }}" alt="Profile"
                             class="rounded-circle">
-                        <span class="d-none d-md-block dropdown-toggle ps-2">K. Anderson</span>
+                        <span class="d-none d-md-block dropdown-toggle ps-2">K. Anderson>
+                            {{ auth()->user()->name }}
+                            <br>
+                            <small>{{ auth()->user()->level }}</small>
+                        </span>
                     </a>
 
 
