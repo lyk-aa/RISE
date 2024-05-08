@@ -4,41 +4,45 @@ namespace App\Http\Middleware;
 
 use Closure;
 use Illuminate\Http\Request;
-use Symfony\Component\HttpFoundation\Response;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Http\RedirectResponse; // Import RedirectResponse
+use Symfony\Component\HttpFoundation\Response;
 
 class owner
 {
-    public function handle(Request $request, Closure $next): mixed // Change the return type
+    /**
+     * Handle an incoming request.
+     *
+     * @param  \Closure(\Illuminate\Http\Request): (\Symfony\Component\HttpFoundation\Response)  $next
+     */
+    public function handle(Request $request, Closure $next): Response
     {
-        if (!Auth::check()) {
-            return redirect()->route('login'); // Return RedirectResponse
+        if(!Auth::check()){
+            return redirect()->route('login');
         }
 
-        $userRole = Auth::user()->route; 
+        $userRole=Auth::user()->role;
 
-        if ($userRole == 1) {
+        if($userRole==1){
             return $next($request);
         }
 
-        if ($userRole == 2) {
-            return redirect()->route('storemanager'); // Return RedirectResponse
+        if($userRole==2){
+            return redirect()->route('store-manager');
         }
 
-        if ($userRole == 3) {
-            return redirect()->route('warehousemanager'); // Return RedirectResponse
+        if($userRole==3){
+            return redirect()->route('warehouse-manager');
         }
 
-        if ($userRole == 4) {
-            return redirect()->route('driver'); // Return RedirectResponse
+        if($userRole==5){
+            return redirect()->route('customer');
         }
 
-        if ($userRole == 5) {
-            return redirect()->route('customer'); // Return RedirectResponse
+        if($userRole==4){
+            return redirect()->route('driver');
         }
 
-        // Return a default response if the user role doesn't match any case
-        return response()->json(['error' => 'Unauthorized'], 403); // Return JsonResponse or other response type
+        // Add this line to explicitly return a response for other roles
+        return abort(403, 'Unauthorized'); // You can customize the error message and code
     }
 }

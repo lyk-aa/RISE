@@ -4,8 +4,8 @@ namespace App\Http\Middleware;
 
 use Closure;
 use Illuminate\Http\Request;
-use Symfony\Component\HttpFoundation\Response;
 use Illuminate\Support\Facades\Auth;
+use Symfony\Component\HttpFoundation\Response;
 
 class customer
 {
@@ -20,26 +20,29 @@ class customer
             return redirect()->route('login');
         }
 
-        $userRole=Auth::user()->route; 
+        $userRole=Auth::user()->role;
 
         if($userRole==5){
             return $next($request);
+        }
+
+        if($userRole==2){
+            return redirect()->route('store-manager');
+        }
+
+        if($userRole==3){
+            return redirect()->route('warehouse-manager');
+        }
+
+        if($userRole==4){
+            return redirect()->route('driver');
         }
 
         if($userRole==1){
             return redirect()->route('owner');
         }
 
-        if($userRole==2){
-            return redirect()->route('storemanager');
-        }
-
-        if($userRole==3){
-            return redirect()->route('warehousemanager');
-        }
-
-        if($userRole==4){
-            return redirect()->route('driver');
-        }
+        // Add this line to explicitly return a response for other roles
+        return abort(403, 'Unauthorized'); // You can customize the error message and code
     }
 }
