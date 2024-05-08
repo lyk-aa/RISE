@@ -215,36 +215,19 @@
 
                     <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#"
                         data-bs-toggle="dropdown">
-<<<<<<< HEAD
-
-
-
-                        <!-- Check if user is authenticated -->
-                        <span class="d-none d-md-block dropdown-toggle ps-2">
-                            {{ auth()->user()->name }} <!-- Display user's name -->
-                            <br>
-                            <small>{{ auth()->user()->level }}</small> <!-- Display user's level -->
-                        </span>
-=======
                         <img src="{{ asset('admin_assets/assets/img/profile-img.jpg') }}" alt="Profile"
                             class="rounded-circle">
 
-                        <span class="d-none d-md-block dropdown-toggle ps-2">K. Anderson</span>
+                        <span class="d-none d-md-block dropdown-toggle ps-2"> {{ auth()->user()->name }}</span>
                         @if (auth()->check())
                             <!-- Check if user is authenticated -->
-                            <span class="d-none d-md-block dropdown-toggle ps-2">
-                                {{ auth()->user()->name }} <!-- Display user's name -->
-                                <br>
-                                <small>{{ auth()->user()->level }}</small> <!-- Display user's level -->
-                            </span>
                         @endif
->>>>>>> 8a4ea16a3983152a862179f552321b9b810f5584
                     </a>
 
 
                     <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
                         <li class="dropdown-header">
-                            <h6>Kevin Anderson</h6>
+                            <h6>{{ auth()->user()->name }}</h6>
                             <span>Web Designer</span>
                         </li>
                         <li>
@@ -302,7 +285,7 @@
         <ul class="sidebar-nav" id="sidebar-nav">
 
             <li class="nav-item">
-                <a class="nav-link " href="index.html">
+                <a class="nav-link " href="{{ route('dashboard') }}">
                     <i class="bi bi-grid"></i>
                     <span>Dashboard</span>
                 </a>
@@ -425,15 +408,6 @@
 
     <main id="main" class="main">
 
-        <div class="pagetitle">
-            <h1>Dashboard</h1>
-            <nav>
-                <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                    <li class="breadcrumb-item active">Dashboard</li>
-                </ol>
-            </nav>
-        </div><!-- End Page Title -->
 
         <div class="container-fluid">
             <!-- Page Heading -->
