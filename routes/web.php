@@ -5,7 +5,7 @@ use Illuminate\Support\Facades\Route;
 Route::view('/', 'welcome');
 
 Route::get ('/', function () {
-    return view('welcome');
+    return view('layouts.auth');
 });
 
 Route::view('dashboard', 'dashboard')
