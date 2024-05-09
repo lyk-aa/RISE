@@ -1,1 +1,1 @@
-@extends('layouts.customer_layout')
+@extends('layouts.customer.layout')
