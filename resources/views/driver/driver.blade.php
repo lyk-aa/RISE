@@ -1,1 +1,1 @@
-@extends('layouts.driver_layout')
+@extends('layouts.driver.layout')
