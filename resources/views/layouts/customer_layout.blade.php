@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-    <title>Store Manager Dashboard</title>
+    <title>Customer Dashboard</title>
     <meta content="" name="description">
     <meta content="" name="keywords">
 
@@ -223,7 +223,7 @@
 
                     <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
                         <li class="dropdown-header">
-                            <h6>Kevin Anderson</h6>
+                            <h6>{{ auth()->user()->name }}</h6>
                             <span>Web Designer</span>
                         </li>
                         <li>

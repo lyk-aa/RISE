@@ -3,7 +3,7 @@
 
 
 @section('contents')
-
+>
 
     <section class="section">
         <div class="row">

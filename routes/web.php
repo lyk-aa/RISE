@@ -1,7 +1,6 @@
 <?php
 
 use App\Http\Controllers\AuthController;
-
 use App\Http\Controllers\ProductController;
 use Illuminate\Support\Facades\Route;
 
@@ -17,29 +16,36 @@ Route::view('profile', 'profile')
 
 Route::get('logout', [AuthController::class, 'logout'])->name('logout');
 
-Route::middleware(['auth', 'verified', 'customer'])->group(function () {
-    Route::view('customer', 'customer.customer')->name('customer');
+
+Route::middleware(['auth', 'verified', 'customer-dashboard'])->group(function () {
+    Route::view('customer-dashboard', 'customer.customer-dashboard')->name('customer-dashboard');
 });
 
-Route::middleware(['auth', 'verified', 'driver'])->group(function () {
-    Route::view('driver', 'driver.driver')->name('driver');
+Route::middleware(['auth', 'verified', 'driver-dashboard'])->group(function () {
+    Route::view('driver-dashboard', 'driver.driver-dashboard')->name('driver-dashboard');
 });
 
-Route::middleware(['auth', 'verified', 'dashboard'])->group(function () {
-    Route::view('dashboard', 'owner.dashboard')->name('dashboard');
+Route::middleware(['auth', 'verified', 'owner-dashboard'])->group(function () {
+    Route::view('owner-dashboard', 'owner.owner-dashboard')->name('owner-dashboard');
 });
 
-Route::middleware(['auth', 'verified', 'warehouse-manager'])->group(function () {
-    Route::view('warehouse-manager', 'warehouse_manager.warehouse-manager')->name('warehouse-manager');
+Route::middleware(['auth', 'verified', 'warehouse-manager-dashboard'])->group(function () {
+    Route::view('warehouse-manager-dashboard', 'warehouse_manager.warehouse-manager-dashboard')->name('warehouse-manager-dashboard');
 });
 
-Route::middleware(['auth', 'verified', 'store-manager'])->group(function () {
-    Route::view('storemanager', 'store_manager.storemanager')->name('store-manager');
+Route::middleware(['auth', 'verified', 'store-manager-dashboard'])->group(function () {
+    Route::view('store-manager-dashboard', 'store_manager.store-manager-dashboard')->name('store-manager-dashboard');
 });
+
+
+
+
+
+
 
 Route::prefix('owner')->group(function () {
 
-    Route::get('dashboard', [ProductController::class, 'dashboard'])->name('dashboard');
+    // Route::get('dashboard', [ProductController::class, 'dashboard'])->name('dashboard');
     Route::get('product', [ProductController::class, 'product'])->name('product');
     Route::get('create', [ProductController::class, 'create'])->name('owner.create');
     

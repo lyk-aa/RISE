@@ -21,22 +21,19 @@ $login = function () {
 
     switch ($userRole) {
         case 1:
-            $this->redirectIntended(default: route('owner', absolute: false), navigate: true);
+            $this->redirectIntended(default: route('owner-dashboard', absolute: false), navigate: true);
             break;
         case 2:
-            $this->redirectIntended(default: route('storemanager', absolute: false), navigate: true);
+            $this->redirectIntended(default: route('store-manager-dashboard', absolute: false), navigate: true);
             break;
         case 3:
-            $this->redirectIntended(default: route('warehousemanager', absolute: false), navigate: true);
+            $this->redirectIntended(default: route('warehouse-manager-dashboard', absolute: false), navigate: true);
             break;
         case 4:
-            $this->redirectIntended(default: route('driver', absolute: false), navigate: true);
+            $this->redirectIntended(default: route('driver-dashboard', absolute: false), navigate: true);
             break;
         case 5:
-            $this->redirectIntended(default: route('customer', absolute: false), navigate: true);
-            break;
-        case 6:
-            $this->redirectIntended(default: route('dashboard', absolute: false), navigate: true);
+            $this->redirectIntended(default: route('customer-dashboard', absolute: false), navigate: true);
             break;
         default:
             return redirect('/');

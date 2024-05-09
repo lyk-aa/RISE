@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Symfony\Component\HttpFoundation\Response;
 
-class owner
+class Owner
 {
     /**
      * Handle an incoming request.
@@ -27,19 +27,19 @@ class owner
         }
 
         if($userRole==2){
-            return redirect()->route('store-manager');
+            return redirect()->route('store-manager-dashboard');
         }
 
         if($userRole==3){
-            return redirect()->route('warehouse-manager');
+            return redirect()->route('warehouse-manager-dashboard');
         }
 
         if($userRole==5){
-            return redirect()->route('customer');
+            return redirect()->route('customer-dashboard');
         }
 
         if($userRole==4){
-            return redirect()->route('driver');
+            return redirect()->route('driver-dashboard');
         }
 
         // Add this line to explicitly return a response for other roles

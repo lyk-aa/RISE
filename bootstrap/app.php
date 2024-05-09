@@ -3,11 +3,11 @@
 use Illuminate\Foundation\Application;
 use Illuminate\Foundation\Configuration\Exceptions;
 use Illuminate\Foundation\Configuration\Middleware;
-use App\Http\Middleware\owner;
-use App\Http\Middleware\storemanager;
-use App\Http\Middleware\warehousemanager;
-use App\Http\Middleware\driver;
-use App\Http\Middleware\customer;
+use App\Http\Middleware\Owner;
+use App\Http\Middleware\Storemanager;
+use App\Http\Middleware\Warehousemanager;
+use App\Http\Middleware\Driver;
+use App\Http\Middleware\Customer;
 
 
 return Application::configure(basePath: dirname(__DIR__))
@@ -18,11 +18,11 @@ return Application::configure(basePath: dirname(__DIR__))
     )
     ->withMiddleware(function (Middleware $middleware) {
         $middleware->alias([
-            'owner'=>owner::class,
-            'storemanager'=>storemanager::class,
-            'warehousemanager'=>warehousemanager::class,
-            'driver'=>driver::class,
-            'customer'=>customer::class
+            'owner-dashboard' => Owner::class,
+            'store-manager-dashboard' => Storemanager::class,
+            'warehouse-manager-dashboard' => Warehousemanager::class,
+            'driver-dashboard' => Driver::class,
+            'customer-dashboard' => Customer::class
         ]);
     })
     ->withExceptions(function (Exceptions $exceptions) {
