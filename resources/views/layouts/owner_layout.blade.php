@@ -285,7 +285,7 @@
         <ul class="sidebar-nav" id="sidebar-nav">
 
             <li class="nav-item">
-                <a class="nav-link " href="{{ route('dashboard') }}">
+                <a class="nav-link " href="{{ route('owner-dashboard') }}">
                     <i class="bi bi-grid"></i>
                     <span>Dashboard</span>
                 </a>
@@ -308,15 +308,15 @@
                             <i class="bi bi-circle"></i><span>Purchase Order</span>
                         </a>
                     </li>
+                    <li>
+                        <a href="{{ route('products') }}">
+                            <i class="bi bi-circle"></i><span>Products</span>
+                        </a>
+                    </li>
                 </ul>
             </li><!-- End Components Nav -->
 
-            <li class="nav-item">
-                <a class="nav-link collapsed" data-bs-target="#forms-nav" data-bs-toggle="collapse"
-                    href="{{ route('product') }}">
-                    <i class="bi bi-journal-text"></i><span>Products</span>
-                </a>
-            </li><!-- End Forms Nav -->
+            <!-- End Forms Nav -->
 
             <li class="nav-item">
                 <a class="nav-link collapsed" data-bs-target="#tables-nav" data-bs-toggle="collapse"

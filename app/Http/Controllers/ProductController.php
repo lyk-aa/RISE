@@ -12,9 +12,9 @@ class ProductController extends Controller
         return view('owner.owner-dashboard');
     }
 
-    public function product(): View
+    public function products(): View
     {
-        return view('owner.product');
+        return view('owner.products');
     }
 
     public function customer_order(): View

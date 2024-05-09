@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ProductController;
+
 use Illuminate\Support\Facades\Route;
 
 Route::view('/', 'welcome')->name('welcome');
@@ -46,11 +47,8 @@ Route::middleware(['auth', 'verified', 'store-manager-dashboard'])->group(functi
 Route::prefix('owner')->group(function () {
 
     // Route::get('dashboard', [ProductController::class, 'dashboard'])->name('dashboard');
-    Route::get('product', [ProductController::class, 'product'])->name('product');
+    Route::get('products', [ProductController::class, 'products'])->name('products');
     Route::get('create', [ProductController::class, 'create'])->name('owner.create');
-    
-
-
     Route::get('order', [ProductController::class, 'order'])->name('order');
     Route::get('customer_order', [ProductController::class, 'customer_order'])->name('customer_order');
     Route::get('purchase_order', [ProductController::class, 'purchase_order'])->name('purchase_order');
