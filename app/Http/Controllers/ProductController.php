@@ -26,6 +26,10 @@ class ProductController extends Controller
     {
         return view('owner.purchase_order');
     }
+    public function stocks(): View
+    {
+        return view('owner.stocks');
+    }
 
     public function create(): View
     {

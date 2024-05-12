@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Symfony\Component\HttpFoundation\Response;
 
-class Customer
+class RoleAuth
 {
     /**
      * Handle an incoming request.
@@ -22,7 +22,7 @@ class Customer
 
         $userRole=Auth::user()->role;
 
-        if($userRole=='customer'){
+        if($userRole=='owner'){
             return $next($request);
         }
 
@@ -34,14 +34,13 @@ class Customer
             return redirect()->route('warehouse-manager-dashboard');
         }
 
+        if($userRole=='customer'){
+            return redirect()->route('customer-dashboard');
+        }
+
         if($userRole=='driver'){
             return redirect()->route('driver-dashboard');
         }
-
-        if($userRole=='owner'){
-            return redirect()->route('owner-dashboard');
-        }
-
         // Add this line to explicitly return a response for other roles
         return abort(403, 'Unauthorized'); // You can customize the error message and code
     }

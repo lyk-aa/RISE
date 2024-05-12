@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Middleware\RoleAuth;
 use Illuminate\Foundation\Application;
 use Illuminate\Foundation\Configuration\Exceptions;
 use Illuminate\Foundation\Configuration\Middleware;
@@ -22,7 +23,8 @@ return Application::configure(basePath: dirname(__DIR__))
             'store-manager-dashboard' => Storemanager::class,
             'warehouse-manager-dashboard' => Warehousemanager::class,
             'driver-dashboard' => Driver::class,
-            'customer-dashboard' => Customer::class
+            'customer-dashboard' => Customer::class,
+            'roleauth' => RoleAuth::class
         ]);
     })
     ->withExceptions(function (Exceptions $exceptions) {

@@ -5,7 +5,7 @@ use App\Http\Controllers\ProductController;
 
 use Illuminate\Support\Facades\Route;
 
-Route::view('/', 'welcome')->name('welcome');
+Route::view('/', 'welcome')->name('welcome')->middleware(['customer-dashboard']);
 
 Route::view('dashboard', 'dashboard')
     ->middleware(['auth', 'verified'])
