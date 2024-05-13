@@ -13,11 +13,7 @@ return new class extends Migration
     {
         Schema::create('driver', function (Blueprint $table) {
             $table->id('driver_id');
-            $table->string('d_lname',length: 45);
-            $table->string('d_fname',length: 45);
-            $table->string('d_cnumber',length: 45);
-            $table->foreignId('id');
-            $table->foreign('id')->references('id')->on('users');
+            $table->foreignId('user_id');
         });
     }
 

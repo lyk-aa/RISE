@@ -11,9 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('delivery_status', function (Blueprint $table) {
-            $table->id('delivery_status_id');
-            $table->string('delivery_status',length: 45);
+        Schema::create('customer', function (Blueprint $table) {
+            $table->id('customer_id');
+            $table->foreignId('user_id');
+            $table->string('c_address', length: 45);
+            $table->string('c_longitude', length: 45);
+            $table->string('c_latitude', length: 45);
         });
     }
 
@@ -22,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('delivery_status');
+        Schema::dropIfExists('customer');
     }
 };

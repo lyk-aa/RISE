@@ -11,11 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('store', function (Blueprint $table) {
-            $table->id('store_id');
-            $table->string('store_location',length: 45);
-            $table->string('store_longitude',length: 45);
-            $table->string('store_latitude',length: 45);
+        Schema::create('order', function (Blueprint $table) {
+            $table->id('order_id');
+            $table->foreignId('customer_id');
+            $table->date('order_date');
+            $table->string('method', length: 25);
+            $table->foreignId('order_status_id');
         });
     }
 
@@ -24,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('store');
+        Schema::dropIfExists('order');
     }
 };

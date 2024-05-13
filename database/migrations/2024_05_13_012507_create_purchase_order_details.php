@@ -12,17 +12,16 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('purchase_order_details', function (Blueprint $table) {
-            $table->id('pordersdetails_id');
-            $table->foreignId('fk_porder_id');
-            $table->foreignId('fk_product_id');
-            $table->string('rice_variety',length: 45);
+            $table->id('porderdetails_id');
+            $table->foreignId('product_id');
+            $table->string('rice_variety');
             $table->integer('quantity');
             $table->float('unit_cost');
             $table->float('total_cost');
             $table->date('date_received');
-            $table->string('posted_to_inventory',length: 45);
-            $table->foreignId('fk_inventory_id');
-            $table->foreignId('fk_supplier_id');
+            $table->date('porder_date');
+            $table->foreignId('supplier_id');
+            $table->foreignId('po_status_id');
         });
     }
 

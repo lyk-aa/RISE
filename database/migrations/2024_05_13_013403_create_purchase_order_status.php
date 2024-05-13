@@ -11,12 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('order', function (Blueprint $table) {
-            $table->id('order_id');
-            $table->foreignId('fk_customer_id');
-            $table->date('order_date');
-            $table->string('method',length: 25);
-            $table->foreignId('fk_ostatus_id');
+        Schema::create('purchase_order_status', function (Blueprint $table) {
+            $table->id('po_status_id');
+            $table->string('po_status', length: 25);
         });
     }
 
@@ -25,6 +22,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('order');
+        Schema::dropIfExists('purchase_order_status');
     }
 };

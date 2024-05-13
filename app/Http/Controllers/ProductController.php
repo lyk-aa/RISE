@@ -9,6 +9,7 @@ class ProductController extends Controller
 
     public function dashboard(): View
     {
+        $user = Auth::user();
         return view('owner.owner-dashboard');
     }
 
