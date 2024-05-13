@@ -64,7 +64,7 @@ h6 {
   font-size: 24px;
   margin-bottom: 0;
   font-weight: 600;
-  color: #012970;
+  color: #07c80a;
 }
 
 /*--------------------------------------------------------------
@@ -77,7 +77,7 @@ h6 {
   right: 15px;
   bottom: 15px;
   z-index: 99999;
-  background: #4154f1;
+  background: #07c80a;
   width: 40px;
   height: 40px;
   border-radius: 4px;
@@ -91,7 +91,7 @@ h6 {
 }
 
 .back-to-top:hover {
-  background: #6776f4;
+  background: #059c06;
   color: #fff;
 }
 
@@ -608,7 +608,7 @@ h6 {
   padding: 20px;
   overflow-y: auto;
   scrollbar-width: thin;
-  scrollbar-color: #aab7cf transparent;
+  scrollbar-color: #bac6b9 transparent;
   box-shadow: 0px 0px 20px rgba(1, 41, 112, 0.1);
   background-color: #fff;
 }
@@ -674,7 +674,7 @@ h6 {
 .sidebar-nav .nav-heading {
   font-size: 11px;
   text-transform: uppercase;
-  color: #899bbd;
+  color: #059c06;
   font-weight: 600;
   margin: 10px 0 5px 15px;
 }
@@ -684,7 +684,7 @@ h6 {
   align-items: center;
   font-size: 15px;
   font-weight: 600;
-  color: #4154f1;
+  color: #059c06;
   transition: 0.3;
   background: #f6f9ff;
   padding: 10px 15px;
@@ -694,25 +694,25 @@ h6 {
 .sidebar-nav .nav-link i {
   font-size: 16px;
   margin-right: 10px;
-  color: #4154f1;
+  color: #07c80a;
 }
 
 .sidebar-nav .nav-link.collapsed {
-  color: #012970;
+  color: #059c06;
   background: #fff;
 }
 
 .sidebar-nav .nav-link.collapsed i {
-  color: #899bbd;
+  color: #07c80a;
 }
 
 .sidebar-nav .nav-link:hover {
-  color: #4154f1;
+  color: #059c06;
   background: #f6f9ff;
 }
 
 .sidebar-nav .nav-link:hover i {
-  color: #4154f1;
+  color: #059c06;
 }
 
 .sidebar-nav .nav-link .bi-chevron-down {
@@ -735,7 +735,7 @@ h6 {
   align-items: center;
   font-size: 14px;
   font-weight: 600;
-  color: #012970;
+  color: #07c80a;
   transition: 0.3;
   padding: 10px 0 10px 40px;
   transition: 0.3s;
@@ -750,11 +750,11 @@ h6 {
 
 .sidebar-nav .nav-content a:hover,
 .sidebar-nav .nav-content a.active {
-  color: #4154f1;
+  color: #059c06;
 }
 
 .sidebar-nav .nav-content a.active i {
-  background-color: #4154f1;
+  background-color: #07c80a;
 }
 
 /*--------------------------------------------------------------
@@ -768,7 +768,7 @@ h6 {
 }
 
 .dashboard .filter .icon {
-  color: #aab7cf;
+  color: #025f02;
   padding-right: 20px;
   padding-bottom: 5px;
   transition: 0.3s;
@@ -777,7 +777,7 @@ h6 {
 
 .dashboard .filter .icon:hover,
 .dashboard .filter .icon:focus {
-  color: #4154f1;
+  color: #07c80a;
 }
 
 .dashboard .filter .dropdown-header {
@@ -789,7 +789,7 @@ h6 {
   font-size: 14px;
   font-weight: 600;
   letter-spacing: 1px;
-  color: #aab7cf;
+  color: #059c06;
   margin-bottom: 0;
   padding: 0;
 }
@@ -805,7 +805,7 @@ h6 {
 
 .dashboard .info-card h6 {
   font-size: 28px;
-  color: #012970;
+  color: #059c06;
   font-weight: 700;
   margin: 0;
   padding: 0;
@@ -821,7 +821,7 @@ h6 {
 }
 
 .dashboard .sales-card .card-icon {
-  color: #4154f1;
+  color: #07c80a;
   background: #f6f6fe;
 }
 
@@ -831,7 +831,7 @@ h6 {
 }
 
 .dashboard .customers-card .card-icon {
-  color: #ff771d;
+  color: #07c80a;
   background: #ffecdf;
 }
 
