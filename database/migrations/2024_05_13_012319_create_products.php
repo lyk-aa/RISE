@@ -13,12 +13,12 @@ return new class extends Migration
     {
         Schema::create('products', function (Blueprint $table) {
             $table->id('product_id');
-            $table->string('rice_type',length: 45);
-            $table->float('unit');
-            $table->float('unit_price');
+            $table->string('rice_type', length: 45);
+            $table->integer('unit');
+            $table->float('price');
             $table->integer('target_level');
-            $table->integer('reorderlevel');
-            $table->string('discontinue',length: 45);
+            $table->integer('reorder_level');
+            $table->string('discontinue', length:25);
         });
     }
 

@@ -49,7 +49,7 @@
         <div class="d-flex align-items-center justify-content-between">
             <a href="index.html" class="logo d-flex align-items-center">
                 <img src="assets/img/logo.png" alt="">
-                <span class="d-none d-lg-block">Owner Admin</span>
+                <span class="d-none d-lg-block text-capitalize"><?php $user = Auth::user();  echo $user['first_name'] . ' ' . $user['last_name']; ?></span>
             </a>
             <i class="bi bi-list toggle-sidebar-btn"></i>
         </div><!-- End Logo -->
@@ -213,8 +213,7 @@
 
                 <li class="nav-item dropdown pe-3">
 
-                    <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#"
-                        data-bs-toggle="dropdown">
+                    <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
                         <img src="{{ asset('admin_assets/assets/img/profile-img.jpg') }}" alt="Profile"
                             class="rounded-circle">
 
@@ -294,8 +293,7 @@
             <li class="nav-item">
                 <a class="nav-link collapsed" data-bs-target="#components-nav" data-bs-toggle="collapse"
                     href="{{ route('order') }}">
-                    <i class="bi bi-menu-button-wide"></i><span>Orders</span><i
-                        class="bi bi-chevron-down ms-auto"></i>
+                    <i class="bi bi-menu-button-wide"></i><span>Orders</span><i class="bi bi-chevron-down ms-auto"></i>
                 </a>
                 <ul id="components-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
                     <li>

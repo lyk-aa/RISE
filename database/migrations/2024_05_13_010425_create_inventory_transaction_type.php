@@ -11,9 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('order_status', function (Blueprint $table) {
-            $table->id('order_status_id');
-            $table->string('o_status',length: 25);
+        Schema::create('inventory_transaction_type', function (Blueprint $table) {
+            $table->id('invtype_id');
+            $table->string('inventoryt_type', length: 25);
         });
     }
 
@@ -22,6 +22,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('order_status');
+        Schema::dropIfExists('inventory_transaction_type');
     }
 };

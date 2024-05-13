@@ -14,11 +14,11 @@ return new class extends Migration
         Schema::create('delivery', function (Blueprint $table) {
             $table->id('delivery_id');
             $table->date('d_date');
-            $table->foreignId('fk_driver_id');
-            $table->foreignId('fk_vehicle_id');
-            $table->foreignId('fk_order_id');
-            $table->foreignId('fk_status_id');
-            $table->string('delivery_address',length: 45);
+            $table->foreignId('driver_id');
+            $table->foreignId('vehicle_id');
+            $table->foreignId('order_id');
+            $table->foreignId('delivery_status_id');
+            $table->string('delivery_address', length:45);
         });
     }
 
