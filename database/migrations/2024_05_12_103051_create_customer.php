@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('customer', function (Blueprint $table) {
             $table->id('customer_id');
-            $table->foreignId('user_id');
+            $table->foreignId('id');
             $table->string('c_address', length: 45);
             $table->string('c_longitude', length: 45);
             $table->string('c_latitude', length: 45);

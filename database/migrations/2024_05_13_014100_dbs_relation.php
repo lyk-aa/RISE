@@ -31,14 +31,14 @@ return new class extends Migration
             $table->foreign('order_status_id')->references('order_status_id')->on('order_status');
         });
         Schema::table('customer', function (Blueprint $table) {
-            $table->foreign('user_id')->references('user_id')->on('users');
+            $table->foreign('id')->references('id')->on('users');
         });
         Schema::table('store_manager', function (Blueprint $table) {
-            $table->foreign('user_id')->references('user_id')->on('users');
+            $table->foreign('id')->references('id')->on('users');
             $table->foreign('store_id')->references('store_id')->on('store');
         });
         Schema::table('warehouse_manager', function (Blueprint $table) {
-            $table->foreign('user_id')->references('user_id')->on('users');
+            $table->foreign('id')->references('id')->on('users');
             $table->foreign('warehouse_id')->references('warehouse_id')->on('warehouse');
         });
         Schema::table('warehouse_stocks', function (Blueprint $table) {

@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('store_manager', function (Blueprint $table) {
             $table->id('store_manager_id');
-            $table->foreignId('user_id');
+            $table->foreignId('id');
             $table->foreignId('store_id');
         });
     }

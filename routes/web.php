@@ -2,11 +2,15 @@
 
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\WarehouseManagerController;
 
+use App\Http\Middleware\Warehousemanager;
 use Illuminate\Support\Facades\Route;
 
 Route::view('/', 'welcome')->name('welcome')->middleware(['customer-dashboard']);
 
+
+// To Delete
 Route::view('dashboard', 'dashboard')
     ->middleware(['auth', 'verified'])
     ->name('dashboard');
@@ -14,6 +18,7 @@ Route::view('dashboard', 'dashboard')
 Route::view('profile', 'profile')
     ->middleware(['auth'])
     ->name('profile');
+    // To Delete
 
 Route::get('logout', [AuthController::class, 'logout'])->name('logout');
 
@@ -58,6 +63,12 @@ Route::prefix('owner')->group(function () {
     Route::get('stocks', [ProductController::class, 'stocks'])->name('stocks');
     Route::get('reports', [ProductController::class, 'reports'])->name('reports');
 
+});
+Route::prefix('warehouse_manager')->group(function () {
+
+    // Route::get('dashboard', [ProductController::class, 'dashboard'])->name('dashboard');
+    Route::get('generate-qr', [WarehouseManagerController::class, 'generateQR'])->name('generateQR');
+    Route::get('qrScan', [WarehouseManagerController::class, 'qrScan'])->name('qrScan');
 });
 
 require __DIR__.'/auth.php';
