@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('warehouse_manager', function (Blueprint $table) {
             $table->id('warehouse_manager_id');
-            $table->foreignId('user_id');
+            $table->foreignId('id');
             $table->foreignId('warehouse_id');
         });
     }
