@@ -16,29 +16,29 @@ class Warehousemanager
      */
     public function handle(Request $request, Closure $next): Response
     {
-        if(!Auth::check()){
+        if (! Auth::check()) {
             return redirect()->route('login');
         }
 
-        $userRole=Auth::user()->role;
+        $userRole = Auth::user()->role;
 
-        if($userRole=='warehouse_manager'){
+        if ($userRole == 'warehouse_manager') {
             return $next($request);
         }
 
-        if($userRole=='owner'){
+        if ($userRole == 'owner') {
             return redirect()->route('owner-dashboard');
         }
 
-        if($userRole=='store_manager'){
+        if ($userRole == 'store_manager') {
             return redirect()->route('store-manager-dashboard');
         }
 
-        if($userRole=='customer'){
+        if ($userRole == 'customer') {
             return redirect()->route('customer-dashboard');
         }
 
-        if($userRole=='driver'){
+        if ($userRole == 'driver') {
             return redirect()->route('driver-dashboard');
         }
 
