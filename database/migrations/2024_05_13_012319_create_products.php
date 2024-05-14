@@ -15,10 +15,11 @@ return new class extends Migration
             $table->id('product_id');
             $table->string('rice_type', length: 45);
             $table->integer('unit');
-            $table->float('price');
+            $table->float('unit_price');
+            $table->float('selling_price');
             $table->integer('target_level');
             $table->integer('reorder_level');
-            $table->string('discontinue', length:25);
+            $table->timestamps();
         });
     }
 

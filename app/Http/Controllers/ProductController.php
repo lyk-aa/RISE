@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\View\View;
+use App\Models\Product;
 
 class ProductController extends Controller
 {
@@ -37,4 +38,9 @@ class ProductController extends Controller
     {
         return view('owner.create');
     }
+
+// 
+
+
+    
 }
