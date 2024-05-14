@@ -4,7 +4,6 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\WarehouseManagerController;
 
-use App\Http\Middleware\Warehousemanager;
 use Illuminate\Support\Facades\Route;
 
 Route::view('/', 'welcome')->name('welcome')->middleware(['customer-dashboard']);
@@ -21,7 +20,6 @@ Route::view('profile', 'profile')
     // To Delete
 
 Route::get('logout', [AuthController::class, 'logout'])->name('logout');
-
 
 Route::middleware(['auth', 'verified', 'customer-dashboard'])->group(function () {
     Route::view('customer-dashboard', 'customer.customer-dashboard')->name('customer-dashboard');
@@ -42,12 +40,6 @@ Route::middleware(['auth', 'verified', 'warehouse-manager-dashboard'])->group(fu
 Route::middleware(['auth', 'verified', 'store-manager-dashboard'])->group(function () {
     Route::view('store-manager-dashboard', 'store_manager.store-manager-dashboard')->name('store-manager-dashboard');
 });
-
-
-
-
-
-
 
 Route::prefix('owner')->group(function () {
 

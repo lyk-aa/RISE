@@ -311,12 +311,6 @@
                 </ul>
             </li><!-- End Components Nav -->
 
-            <li class="nav-item">
-                <a class="nav-link collapsed" data-bs-target="#forms-nav" data-bs-toggle="collapse"
-                    href="{{ route('product') }}">
-                    <i class="bi bi-journal-text"></i><span>Products</span>
-                </a>
-            </li><!-- End Forms Nav -->
 
             <li class="nav-item">
                 <a class="nav-link collapsed" data-bs-target="#tables-nav" data-bs-toggle="collapse"

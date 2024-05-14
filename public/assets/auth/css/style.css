@@ -684,7 +684,7 @@ h6 {
   align-items: center;
   font-size: 15px;
   font-weight: 600;
-  color: #4154f1;
+  color: #e65525;
   transition: 0.3;
   background: #f6f9ff;
   padding: 10px 15px;
@@ -754,7 +754,7 @@ h6 {
 }
 
 .sidebar-nav .nav-content a.active i {
-  background-color: #4154f1;
+  background-color: #222f9c;
 }
 
 /*--------------------------------------------------------------
@@ -798,6 +798,10 @@ h6 {
   padding: 8px 15px;
 }
 
+.section dashboard .row {
+  justify-content: center;
+}
+
 /* Info Cards */
 .dashboard .info-card {
   padding-bottom: 10px;
@@ -806,7 +810,7 @@ h6 {
 .dashboard .info-card h6 {
   font-size: 28px;
   color: #012970;
-  font-weight: 700;
+  f font-weight: 700;
   margin: 0;
   padding: 0;
 }

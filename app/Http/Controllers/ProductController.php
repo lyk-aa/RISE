@@ -6,10 +6,10 @@ use Illuminate\View\View;
 
 class ProductController extends Controller
 {
-
     public function dashboard(): View
     {
         $user = Auth::user();
+
         return view('owner.owner-dashboard');
     }
 
@@ -27,6 +27,7 @@ class ProductController extends Controller
     {
         return view('owner.purchase_order');
     }
+
     public function stocks(): View
     {
         return view('owner.stocks');
