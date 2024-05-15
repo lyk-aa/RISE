@@ -39,8 +39,5 @@ class ProductController extends Controller
         return view('owner.create');
     }
 
-// 
-
-
     
 }
