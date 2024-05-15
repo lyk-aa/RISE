@@ -149,7 +149,7 @@
         <ul class="sidebar-nav" id="sidebar-nav">
 
             <li class="nav-item">
-                <a class="nav-link " href="{{ route('owner-dashboard') }}">
+                <a class="nav-link collpased" href="{{ route('owner-dashboard') }}">
                     <i class="bi bi-grid"></i>
                     <span>Dashboard</span>
                 </a>
@@ -184,7 +184,7 @@
             <!--Product  Dashboard Nav -->
 
             <li class="nav-item">
-                <a class="nav-link " href="{{ route('products') }}">
+                <a class="nav-link collapsed " href="{{ route('products') }}">
                     <i class="bi bi-box"></i>
                     <span>Products</span>
                 </a>
@@ -193,7 +193,7 @@
             <!-- Delivery Dashboard Nav -->
 
             <li class="nav-item">
-                <a class="nav-link " href="{{ route('delivery') }}">
+                <a class="nav-link collapsed" href="{{ route('delivery') }}">
                     <i class="bi bi-truck"></i>
                     <span>Delivery</span>
                 </a>
@@ -233,7 +233,7 @@
             <!-- REports Dashboard Nav -->
 
             <li class="nav-item">
-                <a class="nav-link " href="{{ route('reports') }}">
+                <a class="nav-link collapsed" href="{{ route('reports') }}">
                     <i class="bi bi-bar-chart-line"></i>
                     <span>Reports</span>
                 </a>
