@@ -20,19 +20,19 @@ $login = function () {
     $userRole = Auth::user()->role;
 
     switch ($userRole) {
-        case 1:
+        case 'owner':
             $this->redirectIntended(default: route('owner-dashboard', absolute: false), navigate: true);
             break;
-        case 2:
+        case 'store-manager':
             $this->redirectIntended(default: route('store-manager-dashboard', absolute: false), navigate: true);
             break;
-        case 3:
+        case 'warehouse-manager':
             $this->redirectIntended(default: route('warehouse-manager-dashboard', absolute: false), navigate: true);
             break;
-        case 4:
+        case 'driver':
             $this->redirectIntended(default: route('driver-dashboard', absolute: false), navigate: true);
             break;
-        case 5:
+        case 'customer':
             $this->redirectIntended(default: route('customer-dashboard', absolute: false), navigate: true);
             break;
         default:
