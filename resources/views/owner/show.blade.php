@@ -1,15 +1,40 @@
 @extends('layouts.owner_layout')
 
-@section('title', 'Product Details')
-
-@section('contents')
-    <div class="container mt-4">
-        <h1>{{ $product->rice_type }} ({{ $product->unit }} kg)</h1>
-        <p>Unit Price: ${{ number_format($product->unit_price, 2) }} per kg</p>
-        <p>Selling Price: ${{ number_format($product->selling_price, 2) }} per kg</p>
-        <p>Target Level: {{ $product->target_level }}</p>
-        <p>Re-order Level: {{ $product->reorder_level }}</p>
-        <p>Discontinue: {{ $product->discontinue ? 'Yes' : 'No' }}</p>
-        <a href="{{ route('products.index') }}" class="btn btn-primary">Back to Products</a>
+@section('content')
+    <div class="card">
+        <div class="card-header">
+            Product Details
+        </div>
+        <div class="card-body">
+            <table class="table">
+                <tbody>
+                    <tr>
+                        <th scope="row">Rice Type</th>
+                        <td>{{ $product->rice_type }}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Unit</th>
+                        <td>{{ $product->unit }}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Unit Price</th>
+                        <td>{{ $product->unit_price }}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Selling Price</th>
+                        <td>{{ $product->selling_price }}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Target Level</th>
+                        <td>{{ $product->target_level }}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Reorder Level</th>
+                        <td>{{ $product->reorder_level }}</td>
+                    </tr>
+                </tbody>
+            </table>
+            <a href="{{ route('owner.products') }}" class="btn btn-primary">Back</a>
+        </div>
     </div>
 @endsection

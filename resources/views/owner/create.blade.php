@@ -1,73 +1,68 @@
 @extends('layouts.owner_layout')
 
-
-
 @section('contents')
     <section class="section">
         <div class="row">
             <div class="col-lg-6">
-
                 <div class="card">
                     <div class="card-body">
                         <h5 class="card-title">Add Products</h5>
 
-                        {{-- <form action="{{route('products.store')}}" method="post"> </form> --}}
-
-                        <form>
+                        <form action="{{ route('owner.products.store') }}" method="POST">
+                            @csrf
                             <div class="row mb-3">
-                                <label for="inputText" class="col-sm-2 col-form-label">Rice Type</label>
+                                <label for="rice_type" class="col-sm-2 col-form-label">Rice Type</label>
                                 <div class="col-sm-10">
-                                    <input type="text" class="form-control" id="rice_type" name="rice_type">
+                                    <input type="text" class="form-control" id="rice_type" name="rice_type" required>
                                 </div>
                             </div>
 
                             <div class="row mb-3">
-                                <label for="inputNumber" class="col-sm-2 col-form-label">Unit</label>
+                                <label for="unit" class="col-sm-2 col-form-label">Unit</label>
                                 <div class="col-sm-10">
-                                    <input type="number" class="form-control" id="unit" name="unit">
+                                    <input type="number" class="form-control" id="unit" name="unit" required>
                                 </div>
                             </div>
 
                             <div class="row mb-3">
-                                <label for="inputNumber" class="col-sm-2 col-form-label">Unit Price</label>
+                                <label for="unit_price" class="col-sm-2 col-form-label">Unit Price</label>
                                 <div class="col-sm-10">
-                                    <input type="number" class="form-control" id="unit_price" name="unit_price">
+                                    <input type="number" class="form-control" id="unit_price" name="unit_price" required>
                                 </div>
                             </div>
 
                             <div class="row mb-3">
-                                <label for="inputNumber" class="col-sm-2 col-form-label">Selling Price</label>
+                                <label for="selling_price" class="col-sm-2 col-form-label">Selling Price</label>
                                 <div class="col-sm-10">
-                                    <input type="number" class="form-control" id="selling_price" name="selling_price">
+                                    <input type="number" class="form-control" id="selling_price" name="selling_price"
+                                        required>
                                 </div>
                             </div>
 
                             <div class="row mb-3">
-                                <label for="inputNumber" class="col-sm-2 col-form-label">Target level</label>
+                                <label for="target_level" class="col-sm-2 col-form-label">Target Level</label>
                                 <div class="col-sm-10">
-                                    <input type="number" class="form-control" id="target_level" name="target_level">
+                                    <input type="number" class="form-control" id="target_level" name="target_level"
+                                        required>
                                 </div>
                             </div>
 
                             <div class="row mb-3">
-                                <label for="inputNumber" class="col-sm-2 col-form-label">Re-order level</label>
+                                <label for="reorder_level" class="col-sm-2 col-form-label">Re-order Level</label>
                                 <div class="col-sm-10">
-                                    <input type="number" class="form-control" id="reorder_level" name="target_level">
+                                    <input type="number" class="form-control" id="reorder_level" name="reorder_level"
+                                        required>
                                 </div>
                             </div>
 
-
                             <div class="row mb-3">
-
                                 <div class="col-sm-10">
                                     <button type="submit" class="btn btn-primary">Add Product</button>
                                 </div>
                             </div>
-
                         </form>
                     </div>
                 </div>
-
             </div>
         </div>
     </section>

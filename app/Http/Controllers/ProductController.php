@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\View\View;
 use App\Models\Product;
+use Illuminate\Http\Request;
 
 class ProductController extends Controller
 {
@@ -12,11 +13,6 @@ class ProductController extends Controller
         $user = Auth::user();
 
         return view('owner.owner-dashboard');
-    }
-
-    public function products(): View
-    {
-        return view('owner.products');
     }
 
     public function customer_order(): View
@@ -34,10 +30,66 @@ class ProductController extends Controller
         return view('owner.stocks');
     }
 
+
+    public function products(): View
+    {
+        $products = Product::all(); // Fetch all products
+        return view('owner.products', compact('products')); // Pass products to the view
+    }
     public function create(): View
     {
         return view('owner.create');
     }
-
     
+    public function store(Request $request)
+    {
+        $validatedData = $request->validate([
+            'rice_type' => 'required|string',
+            'unit' => 'required|integer',
+            'unit_price' => 'required|numeric',
+            'selling_price' => 'required|numeric',
+            'target_level' => 'required|integer',
+            'reorder_level' => 'required|integer',
+        ]);
+
+         Product::create($validatedData);
+
+        return redirect()->route('owner.products');
+    }
+
+
+    // // 
+    //   public function edit(Product $product)
+    // {
+    //     return view('owner.edit', compact('product'));
+    // }
+
+    // public function update(Request $request, Product $product)
+    // {
+    //     $validatedData = $request->validate([
+    //         'rice_type' => 'required|string',
+    //         'unit' => 'required|integer',
+    //         'unit_price' => 'required|numeric',
+    //         'selling_price' => 'required|numeric',
+    //         'target_level' => 'required|integer',
+    //         'reorder_level' => 'required|integer',
+    //     ]);
+
+    //     $product->update($validatedData);
+
+    //     return redirect()->route('owner.products');
+    // }
+
+    // public function destroy(Product $product)
+    // {
+    //     $product->delete();
+
+    //     return redirect()->route('owner.products');
+    // }
+    // //     public function store(Request $request)
+    // {
+    //     $product = Product::create($request->all());
+    //     return redirect()->route('owner.products');
+    // }
+
 }

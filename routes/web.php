@@ -42,8 +42,25 @@ Route::middleware(['auth', 'verified', 'store-manager-dashboard'])->group(functi
 Route::prefix('owner')->group(function () {
 
     // Route::get('dashboard', [ProductController::class, 'dashboard'])->name('dashboard');
-    Route::get('products', [ProductController::class, 'products'])->name('products');
+   
+    Route::get('products', [ProductController::class, 'products'])->name('owner.products');
+
+
+    Route::get('/', function () {
+        return redirect()->route('owner.products');
+    });
+
+    Route::resource('products', ProductController::class);
+
+    Route::get('products', [ProductController::class, 'products'])->name('owner.products');
     Route::get('create', [ProductController::class, 'create'])->name('owner.create');
+    Route::post('products', [ProductController::class, 'store'])->name('owner.products.store');
+    
+    // Route::get('products/{product}', [ProductController::class, 'show'])->name('owner.products.show'); // Route for showing a specific product
+    // Route::get('products/{product}/edit', [ProductController::class, 'edit'])->name('owner.products.edit'); // Route for showing the edit form for a specific product
+    // Route::put('products/{product}', [ProductController::class, 'update'])->name('owner.products.update'); // Route for updating a specific product
+    // Route::delete('products/{product}', [ProductController::class, 'destroy'])->name('owner.products.destroy'); // Route for deleting a specific product
+
     Route::get('order', [ProductController::class, 'order'])->name('order');
     Route::get('customer_order', [ProductController::class, 'customer_order'])->name('customer_order');
     Route::get('purchase_order', [ProductController::class, 'purchase_order'])->name('purchase_order');
@@ -52,6 +69,8 @@ Route::prefix('owner')->group(function () {
     Route::get('sales', [ProductController::class, 'sales'])->name('sales');
     Route::get('stocks', [ProductController::class, 'stocks'])->name('stocks');
     Route::get('reports', [ProductController::class, 'reports'])->name('reports');
+    
+    
 
 });
 Route::prefix('warehouse_manager')->group(function () {
