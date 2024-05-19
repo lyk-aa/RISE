@@ -2,9 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\View\View;
-
-class ProductController extends Controller
+class StoreProductController extends Controller
 {
     public function dashboard(): View
     {

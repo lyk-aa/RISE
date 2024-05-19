@@ -44,6 +44,7 @@ Route::prefix('owner')->group(function () {
     // Route::get('dashboard', [ProductController::class, 'dashboard'])->name('dashboard');
     Route::get('products', [ProductController::class, 'products'])->name('products');
     Route::get('create', [ProductController::class, 'create'])->name('owner.create');
+    Route::post('products', [ProductController::class, 'store'])->name('owner.store');
     Route::get('order', [ProductController::class, 'order'])->name('order');
     Route::get('customer_order', [ProductController::class, 'customer_order'])->name('customer_order');
     Route::get('purchase_order', [ProductController::class, 'purchase_order'])->name('purchase_order');
@@ -54,11 +55,33 @@ Route::prefix('owner')->group(function () {
     Route::get('reports', [ProductController::class, 'reports'])->name('reports');
 
 });
+
+// Route::prefix('store_manager')->group(function () {
+
+//     // Route::get('dashboard', [ProductController::class, 'dashboard'])->name('dashboard');
+//     Route::get('products', [ProductController::class, 'products'])->name('store_manager.products');
+//     Route::get('products.create', [ProductController::class, 'create'])->name('store_manager.products.create');
+//     Route::post('create', [ProductController::class, 'store'])->name('owner.store');
+//     Route::get('order', [ProductController::class, 'order'])->name('order');
+//     Route::get('customer_order', [ProductController::class, 'customer_order'])->name('customer_order');
+//     Route::get('purchase_order', [ProductController::class, 'purchase_order'])->name('purchase_order');
+//     Route::get('delivery', [ProductController::class, 'delivery'])->name('delivery');
+//     Route::get('inventory', [ProductController::class, 'inventory'])->name('inventory');
+//     Route::get('sales', [ProductController::class, 'sales'])->name('sales');
+//     Route::get('stocks', [ProductController::class, 'stocks'])->name('stocks');
+//     Route::get('reports', [ProductController::class, 'reports'])->name('reports');
+
+// });
+
 Route::prefix('warehouse_manager')->group(function () {
 
     // Route::get('dashboard', [ProductController::class, 'dashboard'])->name('dashboard');
+    Route::get('warehouse', [WarehouseManagerController::class, 'warehouse'])->name('warehouse');
     Route::get('generate-qr', [WarehouseManagerController::class, 'generateQR'])->name('generateQR');
+    Route::get('create', [WarehouseManagerController::class, 'create'])->name('wm_create');
+    Route::post('warehouse', [WarehouseManagerController::class, 'warehouse'])->name('warehouse');
     Route::get('qrScan', [WarehouseManagerController::class, 'qrScan'])->name('qrScan');
+    Route::post('add_stocks', [WarehouseManagerController::class, 'add_stocks']);
 });
 
 require __DIR__.'/auth.php';

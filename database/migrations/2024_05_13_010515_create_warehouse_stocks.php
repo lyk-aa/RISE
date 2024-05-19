@@ -14,12 +14,15 @@ return new class extends Migration
         Schema::create('warehouse_stocks', function (Blueprint $table) {
             $table->id('warehouse_stocks_id');
             $table->foreignId('product_id');
+            $table->string('unit');
             $table->date('arrival_date');
-            $table->integer('batch_code');
+            $table->string('batch_code', length: 45);
+            $table->string('product_code', length: 45);
             $table->integer('quantity');
             $table->string('qr_code', length: 45);
             $table->foreignId('invtype_id');
             $table->foreignId('warehouse_id');
+            $table->timestamps();
         });
     }
 

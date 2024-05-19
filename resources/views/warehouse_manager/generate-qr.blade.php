@@ -8,12 +8,20 @@
     <script src="https://cdn.rawgit.com/davidshimjs/qrcodejs/gh-pages/qrcode.min.js"></script>
     <div class="d-flex flex-column">
         <h2>Generate QR Code</h2>
-        <!-- <form action="" class="d-flex flex-column"> -->
-        <input class="mb-3 p-2 rounded-3" type="text" name="rice_type" id="rice_type">
-        <input class="mb-3 p-2 rounded-3 w-100" type="date" name="arrival_date" id="arrival_date">
-        <input class="mb-3 p-2 rounded-3" type="number" name="quantity" id="quantity">
-        <button type="submit" id="generateBtn" class=" btn-primary mb-3 p-2 rounded-3">Genearate QR</button>
-        <!-- </form> -->
+        <form action="{{ url('warehouse_manager/add_stocks') }}" method="POST" enctype="multipart/form-data"
+            class="d-flex flex-column">
+            @csrf
+            {{-- <input class="mb-3 p-2 rounded-3" type="text" name="rice_type" id="rice_type"> --}}
+            <select name="rice_type" id="rice_type">
+                @foreach ($products as $product)
+                    <option value="{{ $product->product_id }}">{{ $product->rice_type }}</option>
+                @endforeach
+            </select>
+            <input class="mb-3 p-2 rounded-3 w-100" type="date" name="arrival_date" id="arrival_date">
+            <input class="mb-3 p-2 rounded-3 w-100" type="number" name="unit" id="unit">
+            <input class="mb-3 p-2 rounded-3" type="number" name="quantity" id="quantity">
+            <button type="submit" id="generateBtn" class=" btn-primary mb-3 p-2 rounded-3">Genearate QR</button>
+        </form>
         <div id="qrcode"></div>
     </div>
 

@@ -1,6 +1,4 @@
-@extends('layouts.owner_layout')
-
-
+@extends('layouts.store-manager_layout')
 
 @section('contents')
     <section class="section">
@@ -61,7 +59,7 @@
 
                                 <div class="col-sm-10">
                                     <button type="submit" class="btn btn-primary">Add Product</button>
-                                    <form action="{{ route('owner.store') }}" method='post'></form>
+                                    <form action="{{ route('store_manager.store') }}" method='post'></form>
                                 </div>
                             </div>
 
