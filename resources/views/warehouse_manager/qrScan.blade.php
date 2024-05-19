@@ -1,6 +1,6 @@
 @extends('layouts.warehouse-manager_layout')
 
-@section('title', 'Generate QR')
+@section('title', 'Scan QR')
 
 
 @section('contents')
@@ -13,6 +13,10 @@
             <video id="qrVideo" autoplay playinline></video>
             <div id="scanResult"></div>
         </div>
+
+        <button type="submit" class="btn btn-primary">outbound</button>
+        <a href="{{ route('foroutbound') }}" class="btn btn-secondary">Cancel</a>
+
 
     </div>
     <script>

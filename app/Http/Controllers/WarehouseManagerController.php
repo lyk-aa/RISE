@@ -29,6 +29,23 @@ class WarehouseManagerController extends Controller
         return view('warehouse_manager.qrScan');
     }
 
+    public function foroutbound(): View
+    {
+        return view('warehouse_manager.foroutbouond');
+    }
+
+    public function outbound_stocks(): View
+    {
+        $warehouse_stocks = DB::table('warehouse_stocks')->get();
+        $products = DB::table('products')->get();
+        $warehouse_data = [
+            'warehouse_stocks' => $warehouse_stocks,
+            'products' => $products,
+        ];
+
+        return view('warehouse_manager.outbound_stocks', ['warehouse_data' => $warehouse_data]);
+    }
+
     public function create(): View
     {
         return view('warehouse_manager.create');

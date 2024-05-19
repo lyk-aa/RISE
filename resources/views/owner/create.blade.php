@@ -58,7 +58,7 @@
                             <div class="row mb-3">
                                 <div class="col-sm-10">
                                     <button type="submit" class="btn btn-primary">Add Product</button>
-                                    <form action="{{ route('owner.store') }}" method='post'></form>
+                                    <form action="{{ route('owner.products.store') }}" method='post'></form>
                                 </div>
                             </div>
                         </form>

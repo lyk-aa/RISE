@@ -92,6 +92,8 @@ Route::prefix('warehouse_manager')->group(function () {
     Route::post('warehouse', [WarehouseManagerController::class, 'warehouse'])->name('warehouse');
     Route::get('qrScan', [WarehouseManagerController::class, 'qrScan'])->name('qrScan');
     Route::post('add_stocks', [WarehouseManagerController::class, 'add_stocks']);
+    Route::get('foroutbound', [WarehouseManagerController::class, 'foroutbound'])->name('foroutbound');
+    Route::get('outbound_stocks', [WarehouseManagerController::class, 'outbound_stocks'])->name('outbound_stocks');
 });
 
 require __DIR__.'/auth.php';

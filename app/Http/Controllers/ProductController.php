@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Product;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
 
@@ -57,8 +58,7 @@ class ProductController extends Controller
         return redirect()->route('owner.products');
     }
 
-
-    // // 
+    // //
     //   public function edit(Product $product)
     // {
     //     return view('owner.edit', compact('product'));
