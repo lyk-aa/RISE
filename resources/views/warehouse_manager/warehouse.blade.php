@@ -53,7 +53,7 @@
                                             <td>{{ $warehouse->product_code }}</td>
                                             <td>{{ $warehouse->batch_code }}</td>
                                             <td>
-                                                <div class='qr_code'>{{ $warehouse->qr_code }}
+                                                <div class='qr_code'><span id="{{ $warehouse->qr_code }}"></span>
                                                     <div class='qr_show'></div>
                                                 </div>
                                                 <a class="downloadqr" target="_blank" download>Download QR</a>
@@ -77,10 +77,10 @@
                 var qr_code_array = [...qr_code_div];
 
                 qr_code_array.forEach(element => {
-                    const text = element.textContent;
-                    console.log(text)
+                    // const text = element.textContent;
                     const qrcodeDiv = element.querySelector('.qr_show');
-                    this.innerHTML = '';
+                    const text = element.getElementsByTagName("span")[0].id
+                    console.log(text)
                     const qrcode = new QRCode(qrcodeDiv, {
                         text: text,
                         width: 128,
@@ -95,6 +95,8 @@
                         dlink.setAttribute('href', dataURL);
                         dlink.setAttribute('download', 'qrcode1.png');
                         dlink.removeAttribute('hidden');
+
+                        element.text = '';
                     }, 1000);
                     // var canvas = element.querySelector('img')
                     // console.log(canvas)
@@ -114,10 +116,9 @@
                 //         height: 128
                 //     });
                 // }
-                
+
 
             })
-            // document.querySelector('.downloadqr').addEventListener("click", function() {})
         </script>
 
 
