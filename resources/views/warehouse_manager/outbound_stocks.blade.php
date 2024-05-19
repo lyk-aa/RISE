@@ -25,35 +25,57 @@
                                     <tr>
                                         <th>Rice type</th>
                                         <th>Unit</th>
-                                        <th>Quantity</th>
-                                        <th>Arrival Date</th>
+                                        <th>Outbound Quantity</th>
+                                        <th>Outbound Date</th>
                                         <th>Product Code</th>
                                         <th>Batch Code</th>
-                                        <th>Qr Code</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach ($warehouse_data['warehouse_stocks'] as $warehouse)
+                                    @foreach ($warehouse_data['warehouse_history'] as $key => $warehouse)
                                         <tr>
-                                            <td><?php
-                                            // $jsonwarehouse = json_decode($warehouse['products'], true);
-                                            // echo $jsonwarehouse;
-                                            $products_arr = json_decode(json_encode($warehouse_data['products']), true);
-                                            foreach ($products_arr as $product) {
-                                                $warehouse_arr = json_decode(json_encode($warehouse), true);
-                                                $product_arr = json_decode(json_encode($product), true);
-                                                if ($warehouse_arr['product_id'] == $product_arr['product_id']) {
-                                                    echo $product_arr['rice_type'];
+                                            <?php
+                                                $warehouse_stocks_arr = json_decode(json_encode($warehouse_data['warehouse_stocks']), true);
+                                                foreach ($warehouse_stocks_arr as $key => $warehouse_stock) :
+                                                    if($warehouse_stock['warehouse_stocks_id'] == $warehouse->warehouse_stocks_id):
+                                                        print_r($warehouse_stock['warehouse_stocks_id']);
+                                            ?>
+                                            <td>
+                                                <?php
+                                                $products_arr = json_decode(json_encode($warehouse_data['products']), true);
+                                                foreach ($products_arr as $product) {
+                                                        if ($warehouse_stock['product_id'] == $product['product_id']) {
+                                                            echo $product['rice_type'];
+                                                        }
                                                 }
-                                            }
-                                            ?></td>
-                                            <td>{{ $warehouse->unit }}</td>
-                                            <td>{{ $warehouse->quantity }}</td>
-                                            <td>{{ $warehouse->arrival_date }}</td>
-                                            <td>{{ $warehouse->product_code }}</td>
-                                            <td>{{ $warehouse->batch_code }}</td>
-                                            <td class='qr_code'>{{ $warehouse->qr_code }} <div class='qr_show'></div>
+                                                ?>
                                             </td>
+                                            <td>
+                                                <?php
+                                                    echo $warehouse_stock['unit']
+                                                    ?>
+                                            </td>
+                                            <td>
+                                                {{ $warehouse->outbound_quantity }}
+                                            </td>
+                                            <td>
+                                                {{ $warehouse->created_at }}
+                                            </td>
+                                            <td>
+                                                @php
+                                                    echo $warehouse_stock['product_code']
+                                                @endphp
+                                            </td>
+                                            <td>
+                                                @php
+                                                    echo $warehouse_stock['batch_code']
+                                                @endphp
+                                            </td>
+                                            <?php
+                                                
+                                                    endif;
+                                        endforeach;
+                                            ?>
                                         </tr>
                                     @endforeach
                                 </tbody>

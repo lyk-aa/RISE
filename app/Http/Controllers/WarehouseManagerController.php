@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Warehouse;
+use App\Models\WarehouseHistory;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
@@ -29,18 +30,26 @@ class WarehouseManagerController extends Controller
         return view('warehouse_manager.qrScan');
     }
 
-    public function foroutbound(): View
+    public function foroutbound(Request $request): View
     {
-        return view('warehouse_manager.foroutbouond');
+        
+        $warehouse_stocks_id = $request->qrCode;
+        $warehouse_stock = DB::table('warehouse_stocks')->where('qr_code', '=', $request->qrCode)->get();
+        
+        $products = DB::table('products')->where('product_id', '=', $warehouse_stock[0]->product_id)->get();
+        $data = ['products'=> $products,'warehouse_stock'=> $warehouse_stock];
+        return view('warehouse_manager.foroutbound', ['data' => $data]);
     }
 
     public function outbound_stocks(): View
     {
         $warehouse_stocks = DB::table('warehouse_stocks')->get();
+        $warehouse_history = DB::table('warehouse_history')->get();
         $products = DB::table('products')->get();
         $warehouse_data = [
             'warehouse_stocks' => $warehouse_stocks,
             'products' => $products,
+            'warehouse_history' => $warehouse_history,
         ];
 
         return view('warehouse_manager.outbound_stocks', ['warehouse_data' => $warehouse_data]);
@@ -67,7 +76,7 @@ class WarehouseManagerController extends Controller
     {
         $batch_code = Str::random(10);
         $product_code = Str::upper(Str::random(8));
-        $qr_code = Str::upper(Str::random(16));
+        $qr_code = $batch_code . $product_code;
         $data = new Warehouse;
         $data->product_id = $request->rice_type;
         $data->unit = $request->unit;
@@ -83,4 +92,22 @@ class WarehouseManagerController extends Controller
 
         return redirect()->back();
     }
+    public function sendoutbound(Request $request)
+    {
+        $warehouse_history = new WarehouseHistory;
+        $warehouse_history->warehouse_stocks_id = $request->warehouse_stocks_id;
+        $warehouse_history->previous_value = $request->previous_value;
+        $warehouse_history->outbound_quantity = $request->outbound_quantity;
+        $affected = DB::table('warehouse_stocks')
+              ->where('warehouse_stocks_id', $request->warehouse_stocks_id)
+              ->update(['quantity' => $request->previous_value - $request->outbound_quantity]);
+        $warehouse_history->save();
+
+        return redirect()->route('warehouse');
+    }
+    
+    // public function update_stocks(Request $request){
+    //     $warehouse_stocks_id = $request->rice_type;
+    //     return redirect()->route('foroutbound')->with(['warehouse_stocks_id' => $warehouse_stocks_id]);
+    // }
 }
