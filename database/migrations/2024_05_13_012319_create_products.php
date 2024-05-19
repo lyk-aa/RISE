@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('rice_type', length: 45);
             $table->integer('unit');
             $table->float('unit_price');
-            $table->float('selling_price');
+            $table->float('selling_price')->default(0.0);
             $table->integer('target_level');
             $table->integer('reorder_level');
             $table->timestamps();

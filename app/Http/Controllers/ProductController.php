@@ -57,7 +57,8 @@ class ProductController extends Controller
         return redirect()->route('owner.products');
     }
 
-    // //
+
+    // // 
     //   public function edit(Product $product)
     // {
     //     return view('owner.edit', compact('product'));
@@ -79,6 +80,11 @@ class ProductController extends Controller
     //     return redirect()->route('owner.products');
     // }
 
+    // public function show(Product $product)
+    // {
+    //     return view('owner.show', compact('product'));
+    // }
+
     // public function destroy(Product $product)
     // {
     //     $product->delete();
@@ -86,9 +92,9 @@ class ProductController extends Controller
     //     return redirect()->route('owner.products');
     // }
     // //     public function store(Request $request)
-    // {
-    //     $product = Product::create($request->all());
-    //     return redirect()->route('owner.products');
-    // }
+    // // {
+    // //     $product = Product::create($request->all());
+    // //     return redirect()->route('owner.products');
+    // // }
 
 }

@@ -37,8 +37,8 @@
                                         <td>{{ $product->selling_price }}</td>
                                         <td>{{ $product->target_level }}</td>
                                         <td>{{ $product->reorder_level }}</td>
-                                        {{-- <a href="{{ route('owner.products.show', $product->id) }}" class="btn">View</a>
-                                        <a href="{{ route('owner.products.edit', $product->id) }}" class="btn">Edit</a>
+                                        {{-- <a href="{{ route('owner.show', $product->id) }}" class="btn">View</a>
+                                        <a href="{{ route('owner.edit', $product->id) }}" class="btn">Edit</a>
                                         <form action="{{ route('owner.products.destroy', $product->id) }}" method="post"
                                             style="display: inline;">
                                             @csrf
