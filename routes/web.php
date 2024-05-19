@@ -42,9 +42,19 @@ Route::middleware(['auth', 'verified', 'store-manager-dashboard'])->group(functi
 Route::prefix('owner')->group(function () {
 
     // Route::get('dashboard', [ProductController::class, 'dashboard'])->name('dashboard');
-    Route::get('products', [ProductController::class, 'products'])->name('products');
+
+    Route::get('products', [ProductController::class, 'products'])->name('owner.products');
+
+    Route::get('/', function () {
+        return redirect()->route('owner.products');
+    });
+
+    Route::resource('products', ProductController::class);
+
+    Route::get('products', [ProductController::class, 'products'])->name('owner.products');
     Route::get('create', [ProductController::class, 'create'])->name('owner.create');
-    Route::post('products', [ProductController::class, 'store'])->name('owner.store');
+    Route::post('products', [ProductController::class, 'store'])->name('owner.products.store');
+
     Route::get('order', [ProductController::class, 'order'])->name('order');
     Route::get('customer_order', [ProductController::class, 'customer_order'])->name('customer_order');
     Route::get('purchase_order', [ProductController::class, 'purchase_order'])->name('purchase_order');

@@ -184,7 +184,7 @@
             <!--Product  Dashboard Nav -->
 
             <li class="nav-item">
-                <a class="nav-link collapsed " href="{{ route('products') }}">
+                <a class="nav-link collapsed " href="{{ route('owner.products') }}">
                     <i class="bi bi-box"></i>
                     <span>Products</span>
                 </a>
