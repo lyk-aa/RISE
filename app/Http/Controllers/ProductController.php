@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\View\View;
 use Illuminate\Http\Request;
+use Illuminate\View\View;
 
 class ProductController extends Controller
 {
@@ -29,17 +29,18 @@ class ProductController extends Controller
         return view('owner.stocks');
     }
 
-
     public function products(): View
     {
         $products = Product::all(); // Fetch all products
+
         return view('owner.products', compact('products')); // Pass products to the view
     }
+
     public function create(): View
     {
         return view('owner.create');
     }
-    
+
     public function store(Request $request)
     {
         $validatedData = $request->validate([
@@ -51,13 +52,12 @@ class ProductController extends Controller
             'reorder_level' => 'required|integer',
         ]);
 
-         Product::create($validatedData);
+        Product::create($validatedData);
 
         return redirect()->route('owner.products');
     }
 
-
-    // // 
+    // //
     //   public function edit(Product $product)
     // {
     //     return view('owner.edit', compact('product'));
