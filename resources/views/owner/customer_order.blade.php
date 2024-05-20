@@ -1,7 +1,7 @@
 @extends('layouts.owner_layout')
 
 
-@section('title', 'Products')
+@section('title', 'Orders')
 
 @section('contents')
     <div class="row">
@@ -14,35 +14,108 @@
                     <table class="table datatable">
                         <thead>
                             <tr>
-                                <th>Date</th>
+
                                 <th>Rice Type</th>
                                 <th>Quantity</th>
-                                <th>Re-order Point</th>
-                                <th>Target Level</th>
+                                <th>Total Price</th>
+                                <th>Location</th>
+                                <th>Customer</th>
+                                <th>Date</th>
+                                <th>Status</th>
 
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
-                                <td>01/15/2024</td>
+
                                 <td>Sinandomeng</td>
                                 <td>150</td>
-                                <td>50</td>
-                                <td>300</td>
+                                <td>1500</td>
+                                <td>Lapaz, Iloilo</td>
+                                <td>Aubrey Mendoza</td>
+                                <td>01/15/2024</td>
+                                <td>Completed</td>
                             </tr>
                             <tr>
-                                <td>01/15/2024</td>
-                                <td>Princess Blue</td>
+                                <td>Sinandomeng</td>
                                 <td>150</td>
-                                <td>50</td>
-                                <td>300</td>
+                                <td>1500</td>
+                                <td>Lapaz, Iloilo</td>
+                                <td>Aubrey Mendoza</td>
+                                <td>01/15/2024</td>
+                                <td>Pending</td>
                             </tr>
                             <tr>
-                                <td>01/15/2024</td>
-                                <td>Jasmine Blue</td>
+                                <td>Sinandomeng</td>
                                 <td>150</td>
-                                <td>50</td>
-                                <td>300</td>
+                                <td>1500</td>
+                                <td>Lapaz, Iloilo</td>
+                                <td>Aubrey Mendoza</td>
+                                <td>01/15/2024</td>
+                                <td>Pending</td>
+                            </tr>
+                            <tr>
+                                <td>Sinandomeng</td>
+                                <td>150</td>
+                                <td>1500</td>
+                                <td>Lapaz, Iloilo</td>
+                                <td>Aubrey Mendoza</td>
+                                <td>01/15/2024</td>
+                                <td>Pending</td>
+                            </tr>
+                            <tr>
+                                <td>Sinandomeng</td>
+                                <td>150</td>
+                                <td>1500</td>
+                                <td>Lapaz, Iloilo</td>
+                                <td>Aubrey Mendoza</td>
+                                <td>01/15/2024</td>
+                                <td>Pending</td>
+                            </tr>
+                            <tr>
+                                <td>Sinandomeng</td>
+                                <td>150</td>
+                                <td>1500</td>
+                                <td>Lapaz, Iloilo</td>
+                                <td>Aubrey Mendoza</td>
+                                <td>01/15/2024</td>
+                                <td>Pending</td>
+                            </tr>
+                            <tr>
+                                <td>Sinandomeng</td>
+                                <td>150</td>
+                                <td>1500</td>
+                                <td>Lapaz, Iloilo</td>
+                                <td>Aubrey Mendoza</td>
+                                <td>01/15/2024</td>
+                                <td>Pending</td>
+                            </tr>
+                            <tr>
+                                <td>Sinandomeng</td>
+                                <td>150</td>
+                                <td>1500</td>
+                                <td>Lapaz, Iloilo</td>
+                                <td>Aubrey Mendoza</td>
+                                <td>01/15/2024</td>
+                                <td>Pending</td>
+                            </tr>
+                            <tr>
+                                <td>Sinandomeng</td>
+                                <td>150</td>
+                                <td>1500</td>
+                                <td>Lapaz, Iloilo</td>
+                                <td>Aubrey Mendoza</td>
+                                <td>01/15/2024</td>
+                                <td>Pending</td>
+                            </tr>
+                            <tr>
+                                <td>Sinandomeng</td>
+                                <td>150</td>
+                                <td>1500</td>
+                                <td>Lapaz, Iloilo</td>
+                                <td>Aubrey Mendoza</td>
+                                <td>01/15/2024</td>
+                                <td>Pending</td>
                             </tr>
 
                         </tbody>

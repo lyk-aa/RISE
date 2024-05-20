@@ -12,6 +12,7 @@ class Sale extends Model
     use HasFactory;
 
     protected $fillable = [
+        'product_id',
         'rice_type',
         'quantity',
         'total_price',

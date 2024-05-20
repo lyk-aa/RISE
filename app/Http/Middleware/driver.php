@@ -31,7 +31,7 @@ class Driver
         }
 
         if ($userRole == 'warehouse_manager') {
-            return redirect()->route('warehouse-manager-dashboard');
+            return redirect()->route('warehouse');
         }
 
         if ($userRole == 'customer') {

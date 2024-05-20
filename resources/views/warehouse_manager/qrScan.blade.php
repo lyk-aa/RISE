@@ -15,11 +15,10 @@
             <form id="formElem" style="display: none">
                 <input type="text" id="warehouse_stocks_id" name="warehouse_stocks_id">
                 <input type="submit">
-              </form>
+            </form>
         </div>
 
-        <button type="submit" class="btn btn-primary">outbound</button>
-        {{-- <a href="{{ route('foroutbound') }}" class="btn btn-secondary">Cancel</a> --}}
+
 
 
     </div>

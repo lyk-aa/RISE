@@ -11,26 +11,15 @@ use Illuminate\View\View;
 
 class SalesController extends Controller
 {
-    public function sales()
+    public function sales(): View
     {
         $sales = Sale::all();
         return view('store_manager.sales.sales', compact('sales'));
     }
 
-    // public function sales(): View
-    // {
-    //     return view('store_manager.sales.sales');
-    // }
 
 
-
-    // public function create()
-    // {
-    //     $products = Product::all();
-    //     return view('store_manager.sales.create', compact('products'));
-    // }
-
-    public function create()
+    public function create(): View
     {
         $products = Product::all(); // Fetch all products
         return view('store_manager.sales.create', compact('products')); // Pass the $products variable to the view

@@ -32,13 +32,15 @@ Route::middleware(['auth', 'verified', 'owner-dashboard'])->group(function () {
     Route::view('owner-dashboard', 'owner.owner-dashboard')->name('owner-dashboard');
 });
 
-Route::middleware(['auth', 'verified', 'warehouse-manager-dashboard'])->group(function () {
-    Route::view('warehouse-manager-dashboard', 'warehouse_manager.warehouse-manager-dashboard')->name('warehouse-manager-dashboard');
+Route::middleware(['auth', 'verified', 'warehouse'])->group(function () {
+    Route::view('warehouse', 'warehouse_manager.warehouse')->name('warehouse');
 });
 
 Route::middleware(['auth', 'verified', 'store-manager-dashboard'])->group(function () {
     Route::view('store-manager-dashboard', 'store_manager.store-manager-dashboard')->name('store-manager-dashboard');
 });
+
+
 
 Route::prefix('owner')->group(function () {
 
@@ -64,25 +66,11 @@ Route::prefix('owner')->group(function () {
     Route::get('sales', [ProductController::class, 'sales'])->name('sales');
     Route::get('stocks', [ProductController::class, 'stocks'])->name('stocks');
     Route::get('reports', [ProductController::class, 'reports'])->name('reports');
+    Route::get('warehouse_manager.warehouse', [WarehouseManagerController::class, 'warehouse'])->name('warehouse_manager.warehouse');
 
 });
 
-// Route::prefix('store_manager')->group(function () {
 
-//     // Route::get('dashboard', [ProductController::class, 'dashboard'])->name('dashboard');
-//     Route::get('products', [ProductController::class, 'products'])->name('store_manager.products');
-//     Route::get('products.create', [ProductController::class, 'create'])->name('store_manager.products.create');
-//     Route::post('create', [ProductController::class, 'store'])->name('owner.store');
-//     Route::get('order', [ProductController::class, 'order'])->name('order');
-//     Route::get('customer_order', [ProductController::class, 'customer_order'])->name('customer_order');
-//     Route::get('purchase_order', [ProductController::class, 'purchase_order'])->name('purchase_order');
-//     Route::get('delivery', [ProductController::class, 'delivery'])->name('delivery');
-//     Route::get('inventory', [ProductController::class, 'inventory'])->name('inventory');
-//     Route::get('sales', [ProductController::class, 'sales'])->name('sales');
-//     Route::get('stocks', [ProductController::class, 'stocks'])->name('stocks');
-//     Route::get('reports', [ProductController::class, 'reports'])->name('reports');
-
-// });
 
 Route::prefix('warehouse_manager')->group(function () {
 
@@ -102,29 +90,24 @@ Route::prefix('warehouse_manager')->group(function () {
 
 Route::prefix('store_manager')->group(function () {
 
-    // Route::resource('sales', SalesController::class);
+    Route::resource('sales', SalesController::class);
 
-    // Route for the sales index page
-    // Route::get('sales', [SalesController::class, 'index'])->name('store_manager.sales.sales');
+    Route::get('/', function () {
+        return redirect()->route('store_manager.sales.sales');
+    });
+
+    
     Route::get('sales', [SalesController::class, 'sales'])->name('store_manager.sales.sales');
-
-    // // Route to show a specific sale
-    // Route::get('sales/{sale}', [SalesController::class, 'show'])->name('store_manager.sales.show');
-
-    // // Route to create a new sale
-    // // Route::get('sales/create', [SalesController::class, 'create'])->name('store_manager.sales.create');
-
-
+    Route::get('sales/{sale}', [SalesController::class, 'show'])->name('store_manager.sales.show');
     Route::get('sales/create', [SalesController::class, 'create'])->name('store_manager.sales.create');
-    // Route::post('sales', [SalesController::class, 'store'])->name('store_manager.sales.store');
-    Route::post('sales', [SalesController::class, 'store'])->name('store_manager.sales.sales');
-
-  // Route to edit a sale
     Route::get('sales/{sale}/edit', [SalesController::class, 'edit'])->name('store_manager.sales.edit');
     Route::put('sales/{sale}', [SalesController::class, 'update'])->name('store_manager.sales.update');
-
-    // Route to delete a sale
-Route::delete('sales/{sale}', [SalesController::class, 'destroy'])->name('store_manager.sales.destroy');
+    Route::post('sales', [SalesController::class, 'store'])->name('store_manager.sales.store');
+    Route::delete('sales/{sale}', [SalesController::class, 'destroy'])->name('store_manager.sales.destroy');
+    // Route::post('sales', [SalesController::class, 'store'])->name('store_manager.sales.sales');
+     // Route::get('sales/create', [SalesController::class, 'create'])->name('store_manager.sales.create');
+  
+   
 
 });
 

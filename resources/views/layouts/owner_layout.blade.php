@@ -49,8 +49,9 @@
         <div class="d-flex align-items-center justify-content-between">
             <a href="index.html" class="logo d-flex align-items-center">
                 <img src="assets/img/logo.png" alt="">
-                <span class="d-none d-lg-block text-capitalize"><?php $user = Auth::user();
-                echo $user['first_name'] . ' ' . $user['last_name']; ?></span>
+                <span>Rise</span>
+                {{-- <span class="d-none d-lg-block text-capitalize"><?php $user = Auth::user();
+                echo $user['first_name'] . ' ' . $user['last_name']; ?></span> --}}
             </a>
             <i class="bi bi-list toggle-sidebar-btn"></i>
         </div><!-- End Logo -->
@@ -92,7 +93,8 @@
                     <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
                         <li class="dropdown-header">
                             <h6>{{ auth()->user()->name }}</h6>
-                            <span>Web Designer</span>
+                            <span class="d-none d-lg-block text-capitalize"><?php $user = Auth::user();
+                            echo $user['first_name'] . ' ' . $user['last_name']; ?></span>
                         </li>
                         <li>
                             <hr class="dropdown-divider">
