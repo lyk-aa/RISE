@@ -1,9 +1,10 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\DriverController;
 use App\Http\Controllers\ProductController;
-use App\Http\Controllers\WarehouseManagerController;
 use App\Http\Controllers\SalesController;
+use App\Http\Controllers\WarehouseManagerController;
 use Illuminate\Support\Facades\Route;
 
 Route::view('/', 'welcome')->name('welcome')->middleware(['customer-dashboard']);
@@ -40,8 +41,6 @@ Route::middleware(['auth', 'verified', 'store-manager-dashboard'])->group(functi
     Route::view('store-manager-dashboard', 'store_manager.store-manager-dashboard')->name('store-manager-dashboard');
 });
 
-
-
 Route::prefix('owner')->group(function () {
 
     // Route::get('dashboard', [ProductController::class, 'dashboard'])->name('dashboard');
@@ -70,8 +69,6 @@ Route::prefix('owner')->group(function () {
 
 });
 
-
-
 Route::prefix('warehouse_manager')->group(function () {
 
     // Route::get('dashboard', [ProductController::class, 'dashboard'])->name('dashboard');
@@ -87,7 +84,6 @@ Route::prefix('warehouse_manager')->group(function () {
     // Route::post('update_stocks', [WarehouseManagerController::class, 'update_stocks'])->name('update_stocks');
 });
 
-
 Route::prefix('store_manager')->group(function () {
 
     Route::resource('sales', SalesController::class);
@@ -96,7 +92,6 @@ Route::prefix('store_manager')->group(function () {
         return redirect()->route('store_manager.sales.sales');
     });
 
-    
     Route::get('sales', [SalesController::class, 'sales'])->name('store_manager.sales.sales');
     Route::get('sales/{sale}', [SalesController::class, 'show'])->name('store_manager.sales.show');
     Route::get('sales/create', [SalesController::class, 'create'])->name('store_manager.sales.create');
@@ -105,14 +100,14 @@ Route::prefix('store_manager')->group(function () {
     Route::post('sales', [SalesController::class, 'store'])->name('store_manager.sales.store');
     Route::delete('sales/{sale}', [SalesController::class, 'destroy'])->name('store_manager.sales.destroy');
     // Route::post('sales', [SalesController::class, 'store'])->name('store_manager.sales.sales');
-     // Route::get('sales/create', [SalesController::class, 'create'])->name('store_manager.sales.create');
-  
-   
+    // Route::get('sales/create', [SalesController::class, 'create'])->name('store_manager.sales.create');
 
 });
 
-
-
-
+Route::prefix('driver')->group(function () {
+    Route::get('/routes', [DriverController::class, 'view'])->name('routes');
+    Route::get('/orders', [DriverController::class, 'orders'])->name('orders');
+    Route::get('/schedule', [DriverController::class, 'schedule'])->name('schedule');
+});
 
 require __DIR__.'/auth.php';

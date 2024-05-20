@@ -32,6 +32,64 @@
     <!-- Template Main CSS File -->
     <link href="{{ asset('admin_assets/assets/css/style.css') }}" rel="stylesheet">
 
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDSV1H3B9U0Ze4jyL05cJliB9CR7Zk14d4&libraries=places">
+    </script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        #map {
+            height: 500px;
+            width: 100%;
+        }
+
+        #controls {
+            padding: 10px;
+            background: #f9f9f9;
+        }
+
+        #controls input,
+        #controls button {
+            margin: 5px 0;
+            padding: 10px;
+            width: calc(100% - 22px);
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        #controls ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        #controls ul li {
+            background: #e9e9e9;
+            margin: 5px 0;
+            padding: 10px;
+            border-radius: 4px;
+        }
+
+        #clear-fields {
+            background: #f44336;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        #directions-panel {
+            margin-top: 10px;
+            background: #f9f9f9;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+    </style>
+
     <!-- =======================================================
   * Template Name: NiceAdmin
   * Template URL: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/
@@ -149,25 +207,24 @@
         <ul class="sidebar-nav" id="sidebar-nav">
 
             <li class="nav-item">
-                <a class="nav-link " href="{{ route('dashboard') }}">
-                    <i class="bi bi-grid"></i>
+                <a class="nav-link collapsed" href="{{ route('orders') }}">
+                    <i class="bi bi-cart"></i>
                     <span>Orders</span>
                 </a>
             </li><!-- End Dashboard Nav -->
 
             <li class="nav-item">
-                <a class="nav-link collapsed" data-bs-target="#components-nav" data-bs-toggle="collapse"
-                    href="{{ route('order') }}">
-                    <i class="bi bi-menu-button-wide"></i><span>Schedule</span> <i
-                        class="bi bi-chevron-down ms-auto"></i>
+                <a class="nav-link collapsed" href="{{ route('schedule') }}">
+                    <i class="bi bi-calendar"></i>
+                    <span>Schedule</span>
                 </a>
-            </li><!-- End Components Nav -->
+            </li>
 
 
             <li class="nav-item">
-                <a class="nav-link collapsed" data-bs-target="#tables-nav" data-bs-toggle="collapse"
-                    href="{{ route('delivery') }}">
-                    <i class="bi bi-layout-text-window-reverse"></i><span>Route</span>
+                <a class="nav-link collapsed" href="{{ route('routes') }}">
+                    <i class="bi bi-map"></i>
+                    <span>Routes</span>
                 </a>
             </li><!-- End Tables Nav -->
 

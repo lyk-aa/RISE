@@ -27,7 +27,7 @@
                                         <th>Unit</th>
                                         <th>Outbound Quantity</th>
                                         <th>Outbound Date</th>
-                                        <th>Product Code</th>
+                                        {{-- <th>Product Code</th> --}}
                                         <th>Batch Code</th>
                                     </tr>
                                 </thead>
@@ -44,16 +44,16 @@
                                                 <?php
                                                 $products_arr = json_decode(json_encode($warehouse_data['products']), true);
                                                 foreach ($products_arr as $product) {
-                                                        if ($warehouse_stock['product_id'] == $product['product_id']) {
-                                                            echo $product['rice_type'];
-                                                        }
+                                                    if ($warehouse_stock['product_id'] == $product['product_id']) {
+                                                        echo $product['rice_type'];
+                                                    }
                                                 }
                                                 ?>
                                             </td>
                                             <td>
                                                 <?php
-                                                    echo $warehouse_stock['unit']
-                                                    ?>
+                                                echo $warehouse_stock['unit'];
+                                                ?>
                                             </td>
                                             <td>
                                                 {{ $warehouse->outbound_quantity }}
@@ -61,14 +61,14 @@
                                             <td>
                                                 {{ $warehouse->created_at }}
                                             </td>
-                                            <td>
+                                            {{-- <td>
                                                 @php
-                                                    echo $warehouse_stock['product_code']
+                                                    echo $warehouse_stock['product_code'];
                                                 @endphp
-                                            </td>
+                                            </td> --}}
                                             <td>
                                                 @php
-                                                    echo $warehouse_stock['batch_code']
+                                                    echo $warehouse_stock['batch_code'];
                                                 @endphp
                                             </td>
                                             <?php

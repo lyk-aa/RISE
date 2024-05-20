@@ -27,7 +27,7 @@
                                         <th>Unit</th>
                                         <th>Quantity</th>
                                         <th>Arrival Date</th>
-                                        <th>Product Code</th>
+                                        {{-- <th>Product Code</th> --}}
                                         <th>Batch Code</th>
                                         <th>Qr Code</th>
                                     </tr>
@@ -50,7 +50,7 @@
                                             <td>{{ $warehouse->unit }}</td>
                                             <td>{{ $warehouse->quantity }}</td>
                                             <td>{{ $warehouse->arrival_date }}</td>
-                                            <td>{{ $warehouse->product_code }}</td>
+                                            {{-- <td>{{ $warehouse->product_code }}</td> --}}
                                             <td>{{ $warehouse->batch_code }}</td>
                                             <td>
                                                 <div class='qr_code'><span id="{{ $warehouse->qr_code }}"></span>

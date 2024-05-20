@@ -9,7 +9,7 @@
                         <h5 class="card-title">For Outbound</h5>
                         <h3 class="card-title">Scan Result</h3>
                         <b><a>Rice Type:</b> {{ $data['products'][0]->rice_type }}<br></a>
-                        <b><a>Product Code:</b> {{ $data['warehouse_stock'][0]->product_code }}<br></a>
+                        {{-- <b><a>Product Code:</b> {{ $data['warehouse_stock'][0]->product_code }}<br></a> --}}
                         <b><a>Batch Code:</b> {{ $data['warehouse_stock'][0]->batch_code }}<br></a>
                         <?php
                         // $products_arr = json_decode(json_encode($data['products']), true);
