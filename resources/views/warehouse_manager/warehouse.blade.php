@@ -16,8 +16,7 @@
 
                     <div class="card">
                         <div class="card-body">
-                            <h5 class="card-title">List of Products</h5>
-
+                            <h5 class="card-title">Warehouse Stocks</h5>
 
 
                             <!-- Table with stripped rows -->
@@ -53,7 +52,11 @@
                                             <td>{{ $warehouse->arrival_date }}</td>
                                             <td>{{ $warehouse->product_code }}</td>
                                             <td>{{ $warehouse->batch_code }}</td>
-                                            <td class='qr_code'>{{ $warehouse->qr_code }} <div class='qr_show'></div>
+                                            <td>
+                                                <div class='qr_code'><span id="{{ $warehouse->qr_code }}"></span>
+                                                    <div class='qr_show'></div>
+                                                </div>
+                                                <a class="downloadqr" target="_blank" download>Download QR</a>
                                             </td>
                                         </tr>
                                     @endforeach
@@ -72,19 +75,39 @@
             window.addEventListener('load', function() {
                 var qr_code_div = document.querySelectorAll('.qr_code')
                 var qr_code_array = [...qr_code_div];
+
                 qr_code_array.forEach(element => {
-                    const text = element.textContent;
-                    console.log(text)
+                    // const text = element.textContent;
                     const qrcodeDiv = element.querySelector('.qr_show');
-                    this.innerHTML = '';
+                    const text = element.getElementsByTagName("span")[0].id
+                    console.log(text)
                     const qrcode = new QRCode(qrcodeDiv, {
                         text: text,
                         width: 128,
                         height: 128
                     });
+                    // var canvas = element.getElementsByTagName('img')[0].src;
+                    setTimeout(() => {
+                        let qelem = element.querySelector('.qr_show canvas')
+                        var dataURL = qelem.toDataURL();
+                        let dlink = element.parentElement.querySelector('.downloadqr')
+                        let qr = qelem.getAttribute('src');
+                        dlink.setAttribute('href', dataURL);
+                        dlink.setAttribute('download', 'qrcode1.png');
+                        dlink.removeAttribute('hidden');
 
+                        element.text = '';
+                    }, 1000);
+                    // var canvas = element.querySelector('img')
+                    // console.log(canvas)
+                    // // image = canvas.toDataURL("image/png", 1.0).replace("image/png", "image/octet-stream");
+                    // // console.log(element)
+                    // var link = element.parentElement.querySelector('.downloadqr');
+                    // link.download = "qr.png";
+                    // link.href = canvas;
+                    // link.click();
+                    // console.log(text)
                 });
-                // console.log(text)
                 // if (text) {
                 //     qrcodeDiv.innerHTML = '';
                 //     const qrcode = new QRCode(qrcodeDiv, {
@@ -93,6 +116,8 @@
                 //         height: 128
                 //     });
                 // }
+
+
             })
         </script>
 
