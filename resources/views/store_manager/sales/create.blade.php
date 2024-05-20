@@ -15,9 +15,9 @@
                                 <label for="product_id" class="col-sm-2 col-form-label">Product</label>
                                 <div class="col-sm-10">
                                     <select name="product_id" class="form-control">
-                                        {{-- @foreach ($products as $product)
+                                        @foreach ($products as $product)
                                             <option value="{{ $product->id }}">{{ $product->rice_type }}</option>
-                                        @endforeach --}}
+                                        @endforeach
                                     </select>
                                 </div>
                             </div>
@@ -31,6 +31,12 @@
                                 <label for="total_price" class="col-sm-2 col-form-label">Total Price</label>
                                 <div class="col-sm-10">
                                     <input type="number" class="form-control" name="total_price" required>
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <label for="sale_date" class="col-sm-2 col-form-label">Date of Sale</label>
+                                <div class="col-sm-10">
+                                    <input type="number" class="form-control" name="sale_date" required>
                                 </div>
                             </div>
                             <div class="row mb-3">

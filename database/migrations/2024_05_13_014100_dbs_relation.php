@@ -51,6 +51,12 @@ return new class extends Migration
             $table->foreign('invtype_id')->references('invtype_id')->on('inventory_transaction_type');
             $table->foreign('store_id')->references('store_id')->on('store');
         });
+
+
+        Schema::table('sales', function (Blueprint $table) {
+            $table->foreign('product_id')->references('product_id')->on('products');
+        });
+
     }
 
     /**

@@ -30,9 +30,10 @@ class SalesController extends Controller
     //     return view('store_manager.sales.create', compact('products'));
     // }
 
-    public function create():View
+    public function create()
     {
-        return view('store_manager.sales.create');
+        $products = Product::all(); // Fetch all products
+        return view('store_manager.sales.create', compact('products')); // Pass the $products variable to the view
     }
 
 
@@ -78,4 +79,4 @@ class SalesController extends Controller
         $sale->delete();
         return redirect()->route('store_manager.sales.sales')->with('success', 'Sale deleted successfully');
     }
-}
+} 
