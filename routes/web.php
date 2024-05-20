@@ -3,6 +3,7 @@
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\WarehouseManagerController;
+use App\Http\Controllers\SalesController;
 use Illuminate\Support\Facades\Route;
 
 Route::view('/', 'welcome')->name('welcome')->middleware(['customer-dashboard']);
@@ -97,5 +98,38 @@ Route::prefix('warehouse_manager')->group(function () {
     Route::post('sendoutbound', [WarehouseManagerController::class, 'sendoutbound']);
     // Route::post('update_stocks', [WarehouseManagerController::class, 'update_stocks'])->name('update_stocks');
 });
+
+
+Route::prefix('store_manager')->group(function () {
+
+    // Route::resource('sales', SalesController::class);
+
+    // Route for the sales index page
+    // Route::get('sales', [SalesController::class, 'index'])->name('store_manager.sales.sales');
+    Route::get('sales', [SalesController::class, 'sales'])->name('store_manager.sales.sales');
+
+    // // Route to show a specific sale
+    // Route::get('sales/{sale}', [SalesController::class, 'show'])->name('store_manager.sales.show');
+
+    // // Route to create a new sale
+    // // Route::get('sales/create', [SalesController::class, 'create'])->name('store_manager.sales.create');
+
+
+    Route::get('sales/create', [SalesController::class, 'create'])->name('store_manager.sales.create');
+    // Route::post('sales', [SalesController::class, 'store'])->name('store_manager.sales.store');
+    Route::post('sales', [SalesController::class, 'store'])->name('store_manager.sales.sales');
+
+  // Route to edit a sale
+    Route::get('sales/{sale}/edit', [SalesController::class, 'edit'])->name('store_manager.sales.edit');
+    Route::put('sales/{sale}', [SalesController::class, 'update'])->name('store_manager.sales.update');
+
+    // Route to delete a sale
+Route::delete('sales/{sale}', [SalesController::class, 'destroy'])->name('store_manager.sales.destroy');
+
+});
+
+
+
+
 
 require __DIR__.'/auth.php';

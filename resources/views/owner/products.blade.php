@@ -8,7 +8,7 @@
             <a href="{{ route('owner.create') }}" class="btn btn-primary">Add Products</a>
         </div>
     </div>
-
+    <div></div>
     <section class="section">
         <div class="row">
             <div class="col-lg-12">
@@ -26,6 +26,7 @@
                                     <th>Selling Price</th>
                                     <th>Target level</th>
                                     <th>Re-order level</th>
+                                    {{-- <th>Actions</th> --}}
                                 </tr>
                             </thead>
                             <tbody>

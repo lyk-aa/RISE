@@ -211,7 +211,7 @@
                 </a>
                 <ul id="charts-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
                     <li>
-                        <a href="{{ route('sales') }}">
+                        <a href="{{ route('store_manager.sales.sales') }}">
                             <i class="bi bi-circle"></i><span>Sales</span>
                         </a>
                     </li>
