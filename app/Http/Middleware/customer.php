@@ -35,7 +35,7 @@ class Customer
         }
 
         if($userRole=='driver'){
-            return redirect()->route('driver-dashboard');
+            return redirect()->route('orders');
         }
 
         if($userRole=='owner'){

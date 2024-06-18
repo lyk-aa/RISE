@@ -1,14 +1,12 @@
 @extends('layouts.store-manager_layout')
 
-@section('title', 'Add Sale')
-
 @section('contents')
     <section class="section">
         <div class="row">
             <div class="col-lg-6">
                 <div class="card">
                     <div class="card-body">
-                        <h5 class="card-title">Add Sale Details</h5>
+                        <h5 class="card-title">Sales Details</h5>
                         <form action="{{ route('store_manager.sales.sales') }}" method="POST">
                             @csrf
                             <div class="row mb-3">
@@ -36,9 +34,13 @@
                             <div class="row mb-3">
                                 <label for="sale_date" class="col-sm-2 col-form-label">Date of Sale</label>
                                 <div class="col-sm-10">
-                                    <input type="number" class="form-control" name="sale_date" required>
+                                    <input class="mb-3 p-2 rounded-3 w-100" type="date" name="sale_date" id="sale_date">
+
                                 </div>
                             </div>
+
+
+
                             <div class="row mb-3">
                                 <div class="col-sm-10">
                                     <button type="submit" class="btn btn-primary">Add Sale</button>

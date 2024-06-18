@@ -25,8 +25,8 @@ Route::middleware(['auth', 'verified', 'customer-dashboard'])->group(function ()
     Route::view('customer-dashboard', 'customer.customer-dashboard')->name('customer-dashboard');
 });
 
-Route::middleware(['auth', 'verified', 'driver-dashboard'])->group(function () {
-    Route::view('driver-dashboard', 'driver.driver-dashboard')->name('driver-dashboard');
+Route::middleware(['auth', 'verified', 'orders'])->group(function () {
+    Route::view('orders', 'driver.orders')->name('orders');
 });
 
 Route::middleware(['auth', 'verified', 'owner-dashboard'])->group(function () {
@@ -56,10 +56,15 @@ Route::prefix('owner')->group(function () {
     Route::get('products', [ProductController::class, 'products'])->name('owner.products');
     Route::get('create', [ProductController::class, 'create'])->name('owner.create');
     Route::post('products', [ProductController::class, 'store'])->name('owner.products.store');
+    Route::get('owner/products/{product}', [ProductController::class, 'show'])->name('owner.products.show');
+    Route::get('owner/products/{product}/edit', [ProductController::class, 'edit'])->name('owner.products.edit');
+    Route::put('owner/products/{product}', [ProductController::class, 'update'])->name('owner.products.update');
+    Route::delete('owner/products/{product}', [ProductController::class, 'destroy'])->name('owner.products.destroy');
+
 
     Route::get('order', [ProductController::class, 'order'])->name('order');
     Route::get('customer_order', [ProductController::class, 'customer_order'])->name('customer_order');
-    Route::get('purchase_order', [ProductController::class, 'purchase_order'])->name('purchase_order');
+    Route::get('purchase_order', [ProductController::class, 'purchase_order'])->name('owner.purchase_order');
     Route::get('delivery', [ProductController::class, 'delivery'])->name('delivery');
     Route::get('inventory', [ProductController::class, 'inventory'])->name('inventory');
     Route::get('sales', [ProductController::class, 'sales'])->name('sales');
@@ -87,11 +92,14 @@ Route::prefix('warehouse_manager')->group(function () {
 Route::prefix('store_manager')->group(function () {
 
     Route::resource('sales', SalesController::class);
+    Route::resource('sales', 'SalesController');
+    
 
     Route::get('/', function () {
         return redirect()->route('store_manager.sales.sales');
     });
 
+    
     Route::get('sales', [SalesController::class, 'sales'])->name('store_manager.sales.sales');
     Route::get('sales/{sale}', [SalesController::class, 'show'])->name('store_manager.sales.show');
     Route::get('sales/create', [SalesController::class, 'create'])->name('store_manager.sales.create');

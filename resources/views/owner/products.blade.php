@@ -26,10 +26,11 @@
                                     <th>Selling Price</th>
                                     <th>Target level</th>
                                     <th>Re-order level</th>
-                                    {{-- <th>Actions</th> --}}
+                                    <th>Actions</th>
                                 </tr>
                             </thead>
                             <tbody>
+
                                 @foreach ($products as $product)
                                     <tr>
                                         <td>{{ $product->rice_type }}</td>
@@ -38,13 +39,22 @@
                                         <td>{{ $product->selling_price }}</td>
                                         <td>{{ $product->target_level }}</td>
                                         <td>{{ $product->reorder_level }}</td>
-                                        {{-- <a href="{{ route('owner.show', $product->id) }}" class="btn">View</a>
-                                        <a href="{{ route('owner.edit', $product->id) }}" class="btn">Edit</a>
-                                        <form action="{{ route('owner.products.destroy', $product->id) }}" method="post"
-                                            style="display: inline;">
-                                            @csrf
-                                            @method('DELETE')
-                                            <button type="submit" class="btn">Delete</button> --}}
+                                        <td>
+                                            <a href="" class="btn">View</a>
+                                            {{-- {{ route('owner.products.show', ['product' => $product->id]) }} --}}
+
+                                            <a href="" class="btn">Edit</a>
+                                            {{-- {{ route('owner.products.edit', ['product' => $product->id]) }} --}}
+
+
+                                            {{-- {{ route('owner.products.destroy', ['product' => $product->id]) }} --}}
+                                            <form action="" method="post" style="display: inline;">
+                                                @csrf
+                                                @method('DELETE')
+                                                <button type="submit" class="btn">Delete</button>
+                                            </form>
+
+                                        </td>
 
                                     </tr>
                                 @endforeach

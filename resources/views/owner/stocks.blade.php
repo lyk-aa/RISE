@@ -27,8 +27,7 @@
                                     <th>Date</th>
                                     <th>Rice Type</th>
                                     <th>Quantity</th>
-                                    <th>Re-order Point</th>
-                                    <th>Target Level</th>
+
 
                                 </tr>
                             </thead>
@@ -37,22 +36,37 @@
                                     <td>01/15/2024</td>
                                     <td>Sinandomeng</td>
                                     <td>150</td>
-                                    <td>50</td>
-                                    <td>300</td>
+
                                 </tr>
                                 <tr>
                                     <td>01/15/2024</td>
                                     <td>Princess Blue</td>
                                     <td>150</td>
-                                    <td>50</td>
-                                    <td>300</td>
+
                                 </tr>
                                 <tr>
                                     <td>01/15/2024</td>
                                     <td>Jasmine Blue</td>
                                     <td>150</td>
-                                    <td>50</td>
-                                    <td>300</td>
+
+                                </tr>
+                                <tr>
+                                    <td>01/15/2024</td>
+                                    <td>Aroma</td>
+                                    <td>60</td>
+
+                                </tr>
+                                <tr>
+                                    <td>01/15/2024</td>
+                                    <td>Golden Cup</td>
+                                    <td>90</td>
+
+                                </tr>
+                                <tr>
+                                    <td>01/15/2024</td>
+                                    <td>Jasmine Green</td>
+                                    <td>80</td>
+
                                 </tr>
 
                             </tbody>

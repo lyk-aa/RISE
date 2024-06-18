@@ -22,7 +22,7 @@
                 placeholder="Arrival Date">
             <input class="mb-3 p-2 rounded-3 w-100" type="number" name="unit" id="unit" placeholder="Unit">
             <input class="mb-3 p-2 rounded-3" type="number" name="quantity" id="quantity" placeholder="Quantity">
-            <button type="submit" id="generateBtn" class=" btn-primary mb-3 p-2 rounded-3">Genearate QR</button>
+            <button type="submit" id="generateBtn" class=" btn-primary mb-3 p-2 rounded-3">Add Product</button>
         </form>
         <div id="qrcode"></div>
     </div>

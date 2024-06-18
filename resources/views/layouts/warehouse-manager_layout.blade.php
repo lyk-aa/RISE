@@ -222,7 +222,7 @@
                 <a class="nav-link collapsed" data-bs-target="#components-nav" data-bs-toggle="collapse"
                     href="{{ route('warehouse') }}">
 
-                    <i class="bi bi-grid"></i><span>Stocks</span><i class="bi bi-chevron-down ms-auto"></i>
+                    <i class="bi bi-grid"></i><span>Inventory</span><i class="bi bi-chevron-down ms-auto"></i>
 
 
 
@@ -230,7 +230,7 @@
                 <ul id="components-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
                     <li>
                         <a href="{{ route('warehouse') }}">
-                            <i class="bi bi-circle"></i><span>Inbound</span>
+                            <i class="bi bi-circle"></i><span>Stocks</span>
                         </a>
                     </li>
                     <li>
@@ -247,8 +247,17 @@
             <li class="nav-item">
                 <a class="nav-link collapsed" href="{{ route('generateQR') }}">
                     <i class="bi bi-qr-code"></i>
-                    <span>Generate QR Code</span>
+                    <span>Add Product</span>
                 </a>
+
+
+            <li class="nav-item">
+                <a class="nav-link collapsed " href="">
+                    <i class="bi bi-qr-code-scan"></i>
+                    <span>Purchase Request</span>
+                </a>
+
+            </li>
 
             <li class="nav-item">
                 <a class="nav-link collapsed " href="{{ route('qrScan') }}">
@@ -256,7 +265,20 @@
                     <span>Scan QR Code</span>
                 </a>
 
-            </li><!-- End Dashboard Nav -->
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link collapsed " href="{{ route('qrScan') }}">
+                    <i class="bi bi-qr-code-scan"></i>
+                    <span>Reports</span>
+                </a>
+
+            </li>
+
+            <!-- End Dashboard Nav -->
+
+
+            <!-- End Dashboard Nav -->
 
 
     </aside><!-- End Sidebar-->

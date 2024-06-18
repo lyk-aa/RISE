@@ -16,4 +16,5 @@ class Product extends Model
         'target_level',
         'reorder_level',
     ];
+    
 }

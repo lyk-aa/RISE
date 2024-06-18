@@ -161,24 +161,9 @@
                 <a class="nav-link collapsed" data-bs-target="#components-nav" data-bs-toggle="collapse"
                     href="{{ route('order') }}">
 
-                    <i class="bi bi-cart"></i><span>Orders</span><i class="bi bi-chevron-down ms-auto"></i>
-
-
-
+                    <i class="bi bi-cart"></i><span>Orders</span><i></i>
                 </a>
-                <ul id="components-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
-                    <li>
-                        <a href="{{ route('customer_order') }}">
-                            <i class="bi bi-circle"></i><span>Customer Order</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="{{ route('purchase_order') }}">
-                            <i class="bi bi-circle"></i><span>Purchase Order</span>
-                        </a>
-                    </li>
 
-                </ul>
             </li><!-- End Components Nav -->
 
             <!-- End Forms Nav -->
@@ -223,8 +208,18 @@
                         </a>
                     </li>
                     <li>
-                        <a href="{{ route('stocks') }}">
+                        <a href="{{ route('warehouse_manager.warehouse') }}">
                             <i class="bi bi-circle"></i><span>Warehouse Stocks</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <i class="bi bi-circle"></i><span>Purchase Stocks</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <i class="bi bi-circle"></i><span>Request Stocks</span>
                         </a>
                     </li>
 

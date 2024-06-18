@@ -30,7 +30,7 @@ $login = function () {
             $this->redirectIntended(default: route('warehouse-manager-dashboard', absolute: false), navigate: true);
             break;
         case 'driver':
-            $this->redirectIntended(default: route('driver-dashboard', absolute: false), navigate: true);
+            $this->redirectIntended(default: route('orders', absolute: false), navigate: true);
             break;
         case 'customer':
             $this->redirectIntended(default: route('customer-dashboard', absolute: false), navigate: true);

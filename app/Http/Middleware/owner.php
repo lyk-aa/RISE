@@ -39,7 +39,7 @@ class Owner
         }
 
         if($userRole=='driver'){
-            return redirect()->route('driver-dashboard');
+            return redirect()->route('orders');
         }
 
         // Add this line to explicitly return a response for other roles

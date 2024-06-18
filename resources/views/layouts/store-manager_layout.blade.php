@@ -150,7 +150,7 @@
         <ul class="sidebar-nav" id="sidebar-nav">
 
             <li class="nav-item">
-                <a class="nav-link " href="{{ route('owner-dashboard') }}">
+                <a class="nav-link collpased" href="{{ route('owner-dashboard') }}">
                     <i class="bi bi-grid"></i>
                     <span>Dashboard</span>
                 </a>
@@ -160,24 +160,9 @@
                 <a class="nav-link collapsed" data-bs-target="#components-nav" data-bs-toggle="collapse"
                     href="{{ route('order') }}">
 
-                    <i class="bi bi-cart"></i><span>Orders</span><i class="bi bi-chevron-down ms-auto"></i>
-
-
-
+                    <i class="bi bi-cart"></i><span>Orders</span><i></i>
                 </a>
-                <ul id="components-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
-                    <li>
-                        <a href="{{ route('customer_order') }}">
-                            <i class="bi bi-circle"></i><span>Customer Order</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="{{ route('purchase_order') }}">
-                            <i class="bi bi-circle"></i><span>Purchase Order</span>
-                        </a>
-                    </li>
 
-                </ul>
             </li><!-- End Components Nav -->
 
             <!-- End Forms Nav -->
@@ -185,7 +170,7 @@
             <!--Product  Dashboard Nav -->
 
             <li class="nav-item">
-                <a class="nav-link " href="{{ route('owner.products') }}">
+                <a class="nav-link collapsed " href="{{ route('owner.products') }}">
                     <i class="bi bi-box"></i>
                     <span>Products</span>
                 </a>
@@ -194,7 +179,7 @@
             <!-- Delivery Dashboard Nav -->
 
             <li class="nav-item">
-                <a class="nav-link " href="{{ route('delivery') }}">
+                <a class="nav-link collapsed" href="{{ route('delivery') }}">
                     <i class="bi bi-truck"></i>
                     <span>Delivery</span>
                 </a>
@@ -226,6 +211,16 @@
                             <i class="bi bi-circle"></i><span>Warehouse Stocks</span>
                         </a>
                     </li>
+                    <li>
+                        <a href="">
+                            <i class="bi bi-circle"></i><span>Purchase Stocks</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <i class="bi bi-circle"></i><span>Request Stocks</span>
+                        </a>
+                    </li>
 
                 </ul>
             </li><!-- End Charts Nav -->
@@ -234,7 +229,7 @@
             <!-- REports Dashboard Nav -->
 
             <li class="nav-item">
-                <a class="nav-link " href="{{ route('reports') }}">
+                <a class="nav-link collapsed" href="{{ route('reports') }}">
                     <i class="bi bi-bar-chart-line"></i>
                     <span>Reports</span>
                 </a>

@@ -32,7 +32,7 @@
                                 <td>150</td>
                                 <td>1500</td>
                                 <td>Lapaz, Iloilo</td>
-                                <td>Aubrey Mendoza</td>
+                                <td>Sweet Joy Kween</td>
                                 <td>01/15/2024</td>
                                 <td>Completed</td>
                             </tr>
@@ -41,7 +41,7 @@
                                 <td>150</td>
                                 <td>1500</td>
                                 <td>Lapaz, Iloilo</td>
-                                <td>Aubrey Mendoza</td>
+                                <td>Kathryn B</td>
                                 <td>01/15/2024</td>
                                 <td>Pending</td>
                             </tr>
@@ -50,7 +50,7 @@
                                 <td>150</td>
                                 <td>1500</td>
                                 <td>Lapaz, Iloilo</td>
-                                <td>Aubrey Mendoza</td>
+                                <td>Nadine Lustre</td>
                                 <td>01/15/2024</td>
                                 <td>Pending</td>
                             </tr>
@@ -59,7 +59,7 @@
                                 <td>150</td>
                                 <td>1500</td>
                                 <td>Lapaz, Iloilo</td>
-                                <td>Aubrey Mendoza</td>
+                                <td>Maxpein King</td>
                                 <td>01/15/2024</td>
                                 <td>Pending</td>
                             </tr>
@@ -68,7 +68,7 @@
                                 <td>150</td>
                                 <td>1500</td>
                                 <td>Lapaz, Iloilo</td>
-                                <td>Aubrey Mendoza</td>
+                                <td>Lyka LL</td>
                                 <td>01/15/2024</td>
                                 <td>Pending</td>
                             </tr>
@@ -77,7 +77,7 @@
                                 <td>150</td>
                                 <td>1500</td>
                                 <td>Lapaz, Iloilo</td>
-                                <td>Aubrey Mendoza</td>
+                                <td>Liza Sobrera</td>
                                 <td>01/15/2024</td>
                                 <td>Pending</td>
                             </tr>
@@ -86,7 +86,7 @@
                                 <td>150</td>
                                 <td>1500</td>
                                 <td>Lapaz, Iloilo</td>
-                                <td>Aubrey Mendoza</td>
+                                <td>Alden Rich</td>
                                 <td>01/15/2024</td>
                                 <td>Pending</td>
                             </tr>
@@ -95,7 +95,7 @@
                                 <td>150</td>
                                 <td>1500</td>
                                 <td>Lapaz, Iloilo</td>
-                                <td>Aubrey Mendoza</td>
+                                <td>Anne Curtis</td>
                                 <td>01/15/2024</td>
                                 <td>Pending</td>
                             </tr>
@@ -104,7 +104,7 @@
                                 <td>150</td>
                                 <td>1500</td>
                                 <td>Lapaz, Iloilo</td>
-                                <td>Aubrey Mendoza</td>
+                                <td>Vhong Nav</td>
                                 <td>01/15/2024</td>
                                 <td>Pending</td>
                             </tr>
@@ -113,7 +113,7 @@
                                 <td>150</td>
                                 <td>1500</td>
                                 <td>Lapaz, Iloilo</td>
-                                <td>Aubrey Mendoza</td>
+                                <td>Aubrey M</td>
                                 <td>01/15/2024</td>
                                 <td>Pending</td>
                             </tr>

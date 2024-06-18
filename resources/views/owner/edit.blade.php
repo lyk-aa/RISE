@@ -6,7 +6,7 @@
             Edit Product
         </div>
         <div class="card-body">
-            <form action="{{ route('owner.products.update', $product->id) }}" method="POST">
+            <form action="{{ route('owner.products.update', ['product' => $product->id]) }}" method="POST">
                 @csrf
                 @method('PUT')
 
