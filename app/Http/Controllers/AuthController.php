@@ -30,7 +30,7 @@ class AuthController extends Controller
             'name' => $request->name,
             'email' => $request->email,
             'password' => Hash::make($request->password),
-            'role' => $request->role,
+            'role' => 1,
         ]);
 
         return redirect()->route('login');
@@ -51,7 +51,7 @@ class AuthController extends Controller
     // Attempt to authenticate the user using Laravel's built-in authentication system
     if (Auth::attempt($credentials)) {
         $request->session()->regenerate();
-        return redirect()->route('dashboard'); // Redirect to the dashboard route
+        return redirect()->route('/'); // Redirect to the dashboard route
     }
 
     // If authentication fails, redirect back with error message

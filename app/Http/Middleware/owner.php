@@ -22,24 +22,24 @@ class Owner
 
         $userRole=Auth::user()->role;
 
-        if($userRole==1){
+        if($userRole=='owner'){
             return $next($request);
         }
 
-        if($userRole==2){
+        if($userRole=='store_manager'){
             return redirect()->route('store-manager-dashboard');
         }
 
-        if($userRole==3){
-            return redirect()->route('warehouse-manager-dashboard');
+        if($userRole=='warehouse_manager'){
+            return redirect()->route('warehouse');
         }
 
-        if($userRole==5){
+        if($userRole=='customer'){
             return redirect()->route('customer-dashboard');
         }
 
-        if($userRole==4){
-            return redirect()->route('driver-dashboard');
+        if($userRole=='driver'){
+            return redirect()->route('orders');
         }
 
         // Add this line to explicitly return a response for other roles

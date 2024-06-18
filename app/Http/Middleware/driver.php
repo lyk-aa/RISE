@@ -16,29 +16,29 @@ class Driver
      */
     public function handle(Request $request, Closure $next): Response
     {
-        if(!Auth::check()){
+        if (! Auth::check()) {
             return redirect()->route('login');
         }
 
-        $userRole=Auth::user()->role;
+        $userRole = Auth::user()->role;
 
-        if($userRole==4){
+        if ($userRole == 'driver') {
             return $next($request);
         }
 
-        if($userRole==2){
+        if ($userRole == 'store_manager') {
             return redirect()->route('store-manager-dashboard');
         }
 
-        if($userRole==3){
-            return redirect()->route('warehouse-manager-dashboard');
+        if ($userRole == 'warehouse_manager') {
+            return redirect()->route('warehouse');
         }
 
-        if($userRole==5){
+        if ($userRole == 'customer') {
             return redirect()->route('customer-dashboard');
         }
 
-        if($userRole==1){
+        if ($userRole == 'owner') {
             return redirect()->route('owner-dashboard');
         }
 

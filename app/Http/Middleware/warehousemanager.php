@@ -16,30 +16,30 @@ class Warehousemanager
      */
     public function handle(Request $request, Closure $next): Response
     {
-        if(!Auth::check()){
+        if (! Auth::check()) {
             return redirect()->route('login');
         }
 
-        $userRole=Auth::user()->role;
+        $userRole = Auth::user()->role;
 
-        if($userRole==3){
+        if ($userRole == 'warehouse_manager') {
             return $next($request);
         }
 
-        if($userRole==1){
+        if ($userRole == 'owner') {
             return redirect()->route('owner-dashboard');
         }
 
-        if($userRole==2){
+        if ($userRole == 'store_manager') {
             return redirect()->route('store-manager-dashboard');
         }
 
-        if($userRole==5){
+        if ($userRole == 'customer') {
             return redirect()->route('customer-dashboard');
         }
 
-        if($userRole==4){
-            return redirect()->route('driver-dashboard');
+        if ($userRole == 'driver') {
+            return redirect()->route('orders');
         }
 
         // Add this line to explicitly return a response for other roles
