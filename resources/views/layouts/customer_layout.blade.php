@@ -142,14 +142,14 @@
         <ul class="sidebar-nav" id="sidebar-nav">
 
             <li class="nav-item">
-                <a class="nav-link " href="index.html">
+                <!--<a class="nav-link" href="">-->
                     <i class="bi bi-grid"></i>
                     <span>Dashboard</span>
-                </a>
+                <!--</a>-->
             </li><!-- End Dashboard Nav -->
 
             <li class="nav-item">
-                <a class="nav-link" href="{{ route('owner.products') }}">
+                <a class="nav-link" href="{{ route('customer-dashboard') }}">
                     <i class="bi bi-menu-button-wide"></i><span>Products</span>
                 </a>
 
@@ -161,30 +161,20 @@
                 </a>
                 <ul id="forms-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
                     <li>
-                        <a href="forms-elements.html">
-                            <i class="bi bi-circle"></i><span>Form Elements</span>
+                        <a href="{{ route('cart') }}">
+                            <i class="bi bi-circle"></i><span>My Cart</span>
                         </a>
                     </li>
                     <li>
-                        <a href="forms-layouts.html">
-                            <i class="bi bi-circle"></i><span>Form Layouts</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="forms-editors.html">
-                            <i class="bi bi-circle"></i><span>Form Editors</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="forms-validation.html">
-                            <i class="bi bi-circle"></i><span>Form Validation</span>
+                        <a href="{{ route('order-list') }}">
+                            <i class="bi bi-circle"></i><span>Order List</span>
                         </a>
                     </li>
                 </ul>
             </li><!-- End Forms Nav -->
 
             <li class="nav-item">
-                <a class="nav-link" href="">
+                <a class="nav-link" href="{{ route('history') }}">
                     <i class="bi bi-menu-button-wide"></i><span>History</span>
                 </a>
 
@@ -207,10 +197,8 @@
         </div><!-- End Page Title -->
 
 
-
-
-
-
+        <!-- Dynamic Content Section -->
+        @yield('contents')
     </main><!-- End #main -->
 
     <!-- ======= Footer ======= -->
